@@ -50,7 +50,26 @@ Exemplo:
       "visit_schedule": [],
       "operation_status": "green",
       "states": ["hatched"],
-      "route_ids": [10, 68, 123]
+      "route_ids": [10, 68, 123],
+      "connection": {
+        "kind": "GPRS",
+        "label": "wwan0",
+        "ip": "179.246.209.53",
+        "tunnel_label": null,
+        "tunnel_ip": null,
+        "rssi": 22,
+        "carrier": "vivo"
+      },
+      "services": {
+        "bluetooth": {
+          "mac": null,
+          "status": "inactive"
+        },
+        "pl_mifare": {
+          "mac": null,
+          "status": "inactive"
+        }
+      }
     },
     {
       "id": 88,
@@ -159,6 +178,36 @@ status  descrição
   * *total_vends*: Vendas.
   * *difference*: Diferença de caixa.
   * *vends*: Totais de vendas discrimadas por produto.
+
+* O campo *connection* informa os dados de conexão:
+
+  * *kind*: Tipo de conexão (GPRS, ETHERNET ou WIFI)
+  * *label*: Label da interface de conexão
+  * *ip*: Ip da interface
+  * *tunnel_label*: Label da interface de tunel, caso exista
+  * *tunnel_ip*: Ip da interface de tunel, caso exista
+
+  * Caso o tipo da conexão seja GPRS:
+
+    * *rssi*: Sinal da conexão
+    * *carrier*: Operadora utilizada
+
+  * Caso o tipo da conexão seja WIFI:
+
+    * *rssi*: Sinal da conexão
+    * *essid*: Nome da rede wifi
+
+* O cmapo *services* informa o estado dos serviços
+
+  * *bluetooth*:
+
+    * *mac*: Endereço mac da interface
+    * *status*: Estado da interface (active ou inactive)
+
+  * *pl_mifare*:
+
+    * *mac*: Endereço mac da interface
+    * *status*: Estado da interface (active ou inactive)
 
 Segue um exemplo de retorno:
 
@@ -300,6 +349,25 @@ Segue um exemplo de retorno:
             }
           }
         ]
+      },
+      "connection": {
+        "kind": "GPRS",
+        "label": "wwan0",
+        "ip": "179.246.209.53",
+        "tunnel_label": null,
+        "tunnel_ip": null,
+        "rssi": 22,
+        "carrier": "vivo"
+      },
+      "services": {
+        "bluetooth": {
+          "mac": null,
+          "status": "inactive"
+        },
+        "pl_mifare": {
+          "mac": null,
+          "status": "inactive"
+        }
       }
     }
 
