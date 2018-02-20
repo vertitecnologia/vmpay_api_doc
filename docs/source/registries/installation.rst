@@ -47,6 +47,8 @@ Exemplo:
       "restock_strategy": "allow_pick_list_or_full",
       "notifications_enabled": true,
       "audit_enabled": true,
+      "enable_audit_schedule": true,
+      "audit_schedule": "7:00 12:30 18:00 23:50 (instalação)",
       "visit_schedule": [],
       "operation_status": "green",
       "states": ["hatched"],
@@ -84,6 +86,8 @@ Exemplo:
       "restock_strategy": "allow_pick_list_or_full",
       "notifications_enabled": true,
       "audit_enabled": true,
+      "enable_audit_schedule": true,
+      "audit_schedule": "6:00 10:00 14:00 18:00 22:00 23:50 (padrão)",
       "visit_schedule": ["tuesday", "thursday"]
       "operation_status": "yellow",
       "states": ["audit_failure", "hatched"],
@@ -101,7 +105,9 @@ Exemplo:
       "restock_mode": "restock_and_cash_collect",
       "restock_strategy": "require_pending_pick_list",
       "notifications_enabled": true,
-      "audit_enabled": true,
+      "audit_enabled": false,
+      "enable_audit_schedule": false,
+      "audit_schedule": "",
       "visit_schedule": ["monday", "wednesday", "friday"]
       "operation_status": "red",
       "states": ["extended_power_loss", "hatched"],
@@ -137,6 +143,8 @@ status  descrição
 200     OK
 ======  =========
 
+
+* O campo *audit_schedule* é o calendário de auditoria. Corresponde aos horários separados por espaço, seguidos de uma descrição entre parênteses que indica qual valor é utilizado: o da *instalação*, se o mesmo foi preenchido; ou o *padrão*, caso tenha sido deixado em branco e o valor de *enable_audit_schedule* for *true*. Se *enable_audit_schedule* for *false*, o valor deste campo será vazio.
 * O campo *operation_status* diz respeito ao estado de operação da instalação. Os possíveis valores são os seguintes:
 
   * *green*: Máquina operando normalmente.
@@ -197,7 +205,7 @@ status  descrição
     * *rssi*: Sinal da conexão
     * *essid*: Nome da rede wifi
 
-* O cmapo *services* informa o estado dos serviços
+* O campo *services* informa o estado dos serviços
 
   * *bluetooth*:
 
@@ -226,6 +234,8 @@ Segue um exemplo de retorno:
       "restock_strategy": "allow_pick_list_or_full",
       "notifications_enabled": true,
       "audit_enabled": true,
+      "enable_audit_schedule": true,
+      "audit_schedule": "7:00 12:30 18:00 23:50 (instalação)",
       "visit_schedule": ["monday", "wednesday", "friday"],
       "operation_status": "red",
       "states": ["extended_power_loss", "hatched"],
@@ -414,6 +424,8 @@ Request::
         "restock_strategy": "allow_pick_list_or_full",
         "notifications_enabled": true,
         "audit_enabled": true,
+        "enable_audit_schedule": true,
+        "audit_schedule": "7:00 12:30 18:00 23:50",
         "visit_schedule": ["monday", "wednesday", "friday"],
         "planograms_attributes": [
           {
@@ -502,7 +514,13 @@ Obrigatórios
 
   * *notifications_enabled*: enviar notificações?
   * *audit_enabled*: habilitar auditorias?
-  * *visit_schedule*: array contendo os dias da Agenda de Visitas. Valores permitidos são: *sunday, monday, tuesday, wednesday, thursday, friday, saturday*.
+  * *enable_audit_schedule*: habilitar calendário de auditorias?
+
+    * É setado automaticamente para *false* se *audit_enabled* também for *false*.
+
+  * *visit_schedule*: array contendo os dias da Agenda de Visitas.
+
+    * Valores permitidos são: *sunday, monday, tuesday, wednesday, thursday, friday, saturday*.
 
   * *planograms_attributes*: os planogramas da instalação. Nesse caso, somente um planograma é preenchido: o inicial.
 
@@ -554,6 +572,14 @@ Opcionais
 
   * *place*: local interno.
 
+  * *audit_schedule*: calendário de auditorias.
+
+    * Preencher com horários separados por espaços.
+    * No máximo 6 horários são aceitos, acima disso serão desconsiderados.
+    * Horários em formatos inválidos serão desconsiderados. Os formatos válidos são: H, HH, H:MM, HH:MM, H:MM:SS e HH:MM:SS. Exemplo: \"2 04 5:30 7:30:00 12:45 18:35:50\".
+    * Caso *enable_audit_schedule* seja *false*, o campo será automaticamente limpo.
+    * Caso *enable_audit_schedule* seja *true* e o campo deixado em branco, será utilizado o calendário padrão.
+
 Retorno
 -------
 
@@ -580,6 +606,8 @@ Exemplo:
     "restock_strategy": "allow_pick_list_or_full",
     "notifications_enabled": true,
     "audit_enabled": true,
+    "enable_audit_schedule": true,
+    "audit_schedule": "7:00 12:30 18:00 23:50 (instalação)",
     "visit_schedule": ["monday", "wednesday", "friday"],
     "operation_status": "grey",
     "states": [],
@@ -705,7 +733,7 @@ Campos
 
 Ao menos um campo interno a *installation* deve ser passado.
 
-Somente os parâmetros *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled* e *visit_schedule* são considerados; os demais são ignorados.
+Somente os parâmetros *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule* e *visit_schedule* são considerados; os demais são ignorados.
 
 Não é permitido atualizar um planograma ativo, somente cadastrar um outro planograma pendente. Para tanto, ver Planogramas.
 
@@ -735,6 +763,8 @@ Exemplo:
     "restock_strategy": "allow_pick_list_or_full",
     "notifications_enabled": false,
     "audit_enabled": true,
+    "enable_audit_schedule": true,
+    "audit_schedule": "7:00 12:30 18:00 23:50 (instalação)",
     "visit_schedule": ["monday", "wednesday", "friday"],
     "operation_status": "green",
     "states": ["hatched"],
