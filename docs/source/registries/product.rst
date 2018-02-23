@@ -30,6 +30,7 @@ Exemplo::
       "category_id": 23,
       "name": "Ruffles 50 g",
       "upc_code": "91",
+      "barcode": "1234567890",
       "external_id": null,
       "url": "http://localhost:4000/api/v1/products/163"
     },
@@ -42,6 +43,7 @@ Exemplo::
       "category_id": 23,
       "name": "Doritos 55 g",
       "upc_code": "110",
+      "barcode": "0987654321",
       "external_id": null,
       "url": "http://localhost:4000/api/v1/products/164"
     },
@@ -54,6 +56,7 @@ Exemplo::
       "category_id": 23,
       "name": "Torcida Queijo 50 g",
       "upc_code": "93",
+      "barcode": null,
       "external_id": null,
       "url": "http://localhost:4000/api/v1/products/165"
     }
@@ -95,6 +98,7 @@ Exemplo::
     "category_id": 23,
     "name": "Ruffles 50 g",
     "upc_code": "91",
+    "barcode": "1234567890",
     "external_id": null,
     "url": "http://localhost:4000/api/v1/products/163"
   }
@@ -124,6 +128,7 @@ Request::
       "manufacturer_id": 56,
       "category_id": 21,
       "upc_code": 111,
+      "barcode": "1234567891",
       "external_id": '123qwe'
     }
   }
@@ -146,6 +151,7 @@ Opcionais
 * *product*
 
   * *upc_code*: código do produto.
+  * *barcode*: código de barras do produto, a ser utilizado no micro market.
   * *external_id*: identificador externo do produto.
 
 Retorno
@@ -168,6 +174,7 @@ Exemplo::
     "category_id": 21,
     "name": "Schweppes Citrus",
     "upc_code": "111",
+    "barcode": "1234567891",
     "external_id": '123qwe',
     "url": "http://localhost:4000/api/v1/products/2830"
   }
@@ -243,6 +250,7 @@ Exemplo::
     "category_id": 21,
     "name": "Schweppes Guaraná",
     "upc_code": "111",
+    "barcode": "1234567891",
     "external_id": null,
     "url": "http://localhost:4000/api/v1/products/2830"
   }

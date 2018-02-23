@@ -149,7 +149,8 @@ Segue um exemplo de retorno de consulta:
           "category_id":1,
           "manufacturer_id":2,
           "name":"Product X",
-          "upc_code":"333"
+          "upc_code":"333",
+          "barcode":"1234567890"
         },
         "eft_provider": {
           "name":"Pay&Go"
@@ -196,7 +197,8 @@ Segue um exemplo de retorno de consulta:
           "category_id":1,
           "manufacturer_id":3,
           "name":"Product Y",
-          "upc_code":"444"
+          "upc_code":"444",
+          "barcode":null
         },
         "eft_provider": {
           "name":"SiTef"

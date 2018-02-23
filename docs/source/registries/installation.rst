@@ -333,7 +333,8 @@ Segue um exemplo de retorno:
               "category_id": 5,
               "manufacturer_id": 3,
               "name": "Coca cola",
-              "upc_code": "123"
+              "upc_code": "123",
+              "barcode": "1234567890"
             }
           },
           {
@@ -345,7 +346,8 @@ Segue um exemplo de retorno:
               "category_id": 7,
               "manufacturer_id": null,
               "name": "Cappuccino",
-              "upc_code": null
+              "upc_code": null,
+              "barcode": null
             }
           }
         ]
