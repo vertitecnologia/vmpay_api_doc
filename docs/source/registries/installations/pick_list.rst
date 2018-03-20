@@ -82,6 +82,24 @@ installation_id  id da instalação  sim
 id               id da pick list   sim
 ===============  ================  ===========
 
+Filtro
+------
+
+O parâmetro abaixo pode ser passado como uma `query string <https://en.wikipedia.org/wiki/Query_string>`_.
+
+**show_all_items**:
+  Mostra todos os itens, incluindo os com quantidades zeradas:
+
+  * *true*: retorna todos os itens, incluindo os com quantidades zeradas.
+  * *false*: retorna somente os itens com quantidade maior que zero.
+  * não informado: retorna somente os itens com quantidade maior que zero (*default*).
+
+Exemplos::
+
+  GET /api/v1/machines/[machine_id]/installations/[installation_id]/pick_lists/[id]?show_all_items=true
+  GET /api/v1/machines/[machine_id]/installations/[installation_id]/pick_lists/[id]?show_all_items=false
+  GET /api/v1/machines/[machine_id]/installations/[installation_id]/pick_lists/[id]
+
 Retorno
 -------
 
