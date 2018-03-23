@@ -29,6 +29,7 @@ Exemplo:
       "corporate_name": "VERTI TECNOLOGIA COMERCIO E LOCACAO DE EQUIPAMENTOS LTDA - ME",
       "cpf": null,
       "cnpj": "09.019.291/0001-34",
+      "nif": null,
       "contact_name": "Luiz Alberto Schwab Jr.",
       "contact_phone": "41-9876-5432",
       "contact_email": "luiz@vertitecnologia.com.br",
@@ -42,6 +43,7 @@ Exemplo:
       "corporate_name": "Cia. Brasileira de Distribuição",
       "cpf": null,
       "cnpj": "047508411000156",
+      "nif": null,
       "contact_name": "João Silva",
       "contact_phone": "11-98765-4321",
       "contact_email": "joao@grupopaodeacucar.com.br",
@@ -86,6 +88,7 @@ Exemplo:
     "corporate_name": "VERTI TECNOLOGIA COMERCIO E LOCACAO DE EQUIPAMENTOS LTDA - ME",
     "cpf": null,
     "cnpj": "09.019.291/0001-34",
+    "nif": null,
     "contact_name": "Luiz Alberto Schwab Jr.",
     "contact_phone": "41-9876-5432",
     "contact_email": "luiz@vertitecnologia.com.br",
@@ -152,6 +155,7 @@ Opcionais
   * *contact_email*: email para contato.
   * *notes*: Observação.
   * *main_location_id*: id do endereço principal do cliente.
+  * *nif*: Número de Identificação Fiscal (Portugal).
 
 Retorno
 -------
@@ -172,6 +176,7 @@ Exemplo:
     "corporate_name": null,
     "cpf": null,
     "cnpj": "54173174000185",
+    "nif": null,
     "contact_name": null,
     "contact_phone": null,
     "contact_email": null,
@@ -248,6 +253,7 @@ Exemplo:
     "corporate_name": null,
     "cpf": null,
     "cnpj": "54173174000185",
+    "nif": null,
     "contact_name": null,
     "contact_phone": null,
     "contact_email": null,
