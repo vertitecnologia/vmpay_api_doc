@@ -18,6 +18,7 @@ Resources disponíveis
 
    registries/category
    registries/client
+   registries/country
    registries/manufacturer
    registries/installation
    registries/input

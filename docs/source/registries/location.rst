@@ -33,6 +33,7 @@ Exemplo:
       "complement": null,
       "neighborhood": "São Sebastião",
       "city": "São José dos Pinhais",
+      "country": "BR",
       "state": "PR",
       "zip_code": "696969"
     },
@@ -46,6 +47,7 @@ Exemplo:
       "complement": "Barracão 04 Fundos",
       "neighborhood": "Pinheirinho",
       "city": "Curitiba",
+      "country": "BR",
       "state": "PR",
       "zip_code": "81870370"
     },
@@ -59,6 +61,7 @@ Exemplo:
       "complement": null,
       "neighborhood": "Batel",
       "city": "Curitiba",
+      "country": "BR",
       "state": "PR",
       "zip_code": "80420160"
     }
@@ -103,6 +106,7 @@ Exemplo:
     "complement": null,
     "neighborhood": "São Sebastião",
     "city": "São José dos Pinhais",
+    "country": "BR",
     "state": "PR",
     "zip_code": "696969"
   }
@@ -134,6 +138,7 @@ Request::
       "complement": "loja 1",
       "neighborhood": "Centro",
       "city": "Curitiba",
+      "country": "BR",
       "state": "PR",
       "zip_code": "80140110"
     }
@@ -162,6 +167,8 @@ Opcionais
   * *complement*: complemento.
   * *neighborhood*: bairro.
   * *city*: cidade.
+  * *country*: o código do país. Se for inexistente ou vazio, será considerado como sendo "BR" (Brasil). Para uma lista de códigos de países, ver :doc:`country`.
+  * *state*: estado/região. Para uma lista de códigos de estados/regiões, ver :doc:`country`.
   * *zip_code*: CEP.
 
 Retorno
@@ -187,6 +194,7 @@ Exemplo:
     "complement": "loja 1",
     "neighborhood": "Centro",
     "city": "Curitiba",
+    "country": "BR",
     "state": "PR",
     "zip_code": "80140110"
   }
@@ -264,6 +272,7 @@ Exemplo:
     "complement": null,
     "neighborhood": "São Sebastião",
     "city": "São José dos Pinhais",
+    "country": "BR",
     "state": "PR",
     "zip_code": "696969"
   }
