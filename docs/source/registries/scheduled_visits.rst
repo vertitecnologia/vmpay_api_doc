@@ -30,6 +30,8 @@ Cada elemento do array contém os seguintes campos:
 
 * **id**: o id da visita agendada
 
+* **creator_id**: o id do usuário que criou a visita
+
 * **created_at**: a data de criação da visita agendada, no formato
   `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
 
@@ -48,6 +50,13 @@ Cada elemento do array contém os seguintes campos:
 
   - **installation_id**: o id da instalação
 
+  - **pick_list_scheduled**: se deve agendar a geração da pick list
+
+  - **pick_list_scheduled_at**: data de agendamento da geração de pick list, no formato 
+    `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+
+  - **pick_list_generated**: se o pick list já foi gerado ou não
+
   - **restock**: se deve efetuar reabastecimento na visita
 
   - **cash_collect**: se deve efetuar coleta na visita
@@ -59,6 +68,7 @@ Exemplo:
   [
     {
       "id": 13080,
+      "creator_id": 84,
       "created_at": "2017-11-23T10:30:50.000-02:00",
       "updated_at": "2017-11-23T10:50:00.000-02:00",
       "date": "2017-11-24",
@@ -69,6 +79,15 @@ Exemplo:
           "id": 84652,
           "installation_id": 1982,
           "restock": false,
+          "cash_collect": false
+        },
+        {
+          "id": 84640,
+          "installation_id": 7687,
+          "pick_list_scheduled": true,
+          "pick_list_scheduled_at": "2017-11-24T12:00:00.000Z",
+          "pick_list_generated": true,
+          "restock": true,
           "cash_collect": false
         }
       ]
@@ -129,6 +148,7 @@ Exemplo:
 
   {
     "id": 13074,
+    "creator_id": 84,
     "created_at": "2017-11-14T15:33:18.000-02:00",
     "updated_at": "2017-11-16T18:14:21.000-02:00",
     "date": "2017-12-17",
@@ -138,14 +158,27 @@ Exemplo:
       {
         "id": 84638,
         "installation_id": 7690,
+        "pick_list_scheduled": false,
+        "pick_list_generated": false,
         "restock": false,
         "cash_collect": true
       },
       {
         "id": 84639,
         "installation_id": 7688,
+        "pick_list_scheduled": false,
+        "pick_list_generated": false,
         "restock": true,
         "cash_collect": true
+      },
+      {
+        "id": 84640,
+        "installation_id": 7687,
+        "pick_list_scheduled": true,
+        "pick_list_scheduled_at": "2018-12-19T12:00:00.000Z",
+        "pick_list_generated": false,
+        "restock": true,
+        "cash_collect": false
       }
     ]
   }
@@ -171,14 +204,17 @@ Request::
   {
     "scheduled_visit": {
       "vacant_amounts_required": true,
+      "creator_id": 84,
       "date": "2017-12-18",
       "scheduled_visit_routes_attributes": [{
         "route_id": 299
       }],
       "checkpoints_attributes": [{
-        "installation_id": 7686,
+        "installation_id": 7687,
         "restock": true,
-        "cash_collect": false
+        "cash_collect": false,
+        "pick_list_scheduled": true,
+        "pick_list_scheduled_at": "2017-12-18T12:00:00.000Z"
       }, {
         "installation_id": 7690,
         "restock": false,
@@ -211,6 +247,8 @@ Opcionais
     * Valores permitidos: *true* se exige o preenchimento ou *false* se não
       exige.
 
+  * *creator_id*: Id do usuário que está criando.
+
 * *scheduled_visit_routes_attributes*: Array com atributos das rotas associadas
 
   * *route_id*: Id da rota associada ao agendamento
@@ -227,6 +265,14 @@ Opcionais
   * *cash_collect*: Se deve efetuar a coleta na visita
 
     * Valores permitidos: *true* para efetuar a coleta ou *false* se não.
+
+  * *pick_list_scheduled*: Se deve agendar a geração do pick list
+
+    * Valores permitidos: *true* para agendar a geração ou *false* se não.
+
+  * *pick_list_scheduled_at*: Data e hora da geração da pick list caso seja agendada
+
+    * Obrigatório caso pick_list_scheduled seja true.
 
 
 Retorno
@@ -252,10 +298,12 @@ Exemplo:
     "checkpoints": [
       {
         "id": 84653,
-        "installation_id": 7686,
+        "installation_id": 7687,
         "restock": true,
-        "cash_collect": false
-      },
+        "cash_collect": false,
+        "pick_list_scheduled": true,
+        "pick_list_scheduled_at": "2017-12-18T11:00:00.000Z"
+      }
       {
         "id": 84654,
         "installation_id": 7690,
