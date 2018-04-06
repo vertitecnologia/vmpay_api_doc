@@ -52,8 +52,9 @@ Cada elemento do array contém os seguintes campos:
 
   - **pick_list_scheduled**: se deve agendar a geração da pick list
 
-  - **pick_list_scheduled_at**: data de agendamento da geração de pick list, no formato 
-    `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+  - **pick_list_scheduled_at**: data de agendamento da geração de pick list, no formato `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+
+  - **pick_list_scheduled_minutes**: minutos do agendamento da geração de pick list
 
   - **pick_list_generated**: se o pick list já foi gerado ou não
 
@@ -214,7 +215,8 @@ Request::
         "restock": true,
         "cash_collect": false,
         "pick_list_scheduled": true,
-        "pick_list_scheduled_at": "2017-12-18T12:00:00.000Z"
+        "pick_list_scheduled_hour": 10,
+        "pick_list_scheduled_minutes": 15
       }, {
         "installation_id": 7690,
         "restock": false,
@@ -270,10 +272,15 @@ Opcionais
 
     * Valores permitidos: *true* para agendar a geração ou *false* se não.
 
-  * *pick_list_scheduled_at*: Data e hora da geração da pick list caso seja agendada
+  * *pick_list_scheduled_hour*: hora(UTC) da geração da pick list caso seja agendada a
+  data será a mesma do scheduled_visit.date
 
-    * Obrigatório caso pick_list_scheduled seja true.
+    * Default 0 caso pick_list_scheduled seja true.
 
+  * *pick_list_scheduled_minutes*: minutos da geração da pick list caso seja agendada a
+  data será a mesma do scheduled_visit.date
+
+    * Default 0 caso pick_list_scheduled seja true.
 
 Retorno
 -------
@@ -302,7 +309,7 @@ Exemplo:
         "restock": true,
         "cash_collect": false,
         "pick_list_scheduled": true,
-        "pick_list_scheduled_at": "2017-12-18T11:00:00.000Z"
+        "pick_list_scheduled_at": "2017-12-18T10:15:00.000Z"
       }
       {
         "id": 84654,
