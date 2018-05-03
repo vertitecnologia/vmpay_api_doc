@@ -181,3 +181,140 @@ Segue um exemplo de retorno de consulta:
         }
       }
     ]
+
+Ver
+===
+
+Mostra determinado caixa.
+
+::
+
+  GET /api/v1/sessions/[session_id]
+
+Parâmetros de URL:
+------------------
+
+==========  ================  ===========
+parâmetro   descrição         obrigatório
+==========  ================  ===========
+session_id  id do caixa       sim
+==========  ================  ===========
+
+Retorno
+-------
+
+======  =========
+status  descrição
+======  =========
+200     OK
+======  =========
+
+Os campos de rotorno são os mesmos da API de listagem (/api/v1/sessions) com a adição do campo sales.
+
+* **sales**: vendas que ocorreram enquanto o caixa estava aberto. Dados agrupados por produto e tipo de pagamento
+
+  * *product*: Endereço mac da interface
+
+    * *name*: Nome do produto
+
+    * *upc_code*: Código UPC do produto
+
+  * *quantity*: Quantidade de produtos vendidos
+
+  * *value*: Valor de cada produto
+
+  * *payment_type*: Tipo de pagamento: 1 - Cash, 2 - Cashless
+
+  
+Segue um exemplo de retorno:
+
+::
+
+    {
+      "id":110408,
+      "started_at":"2017-04-26T13:00:26.000-03:00",
+      "ended_at":"2017-04-26T13:08:08.000-03:00",
+      "last_audit_began_at":"2017-04-26T17:30:29.000Z",
+      "client_id":949,
+      "location_id":2325,
+      "machine_id":1687,
+      "installation_id":2865,
+      "cashbox_amount":0.0,
+      "bill_validator_amount":0.0,
+      "collectible_amount":0.0,
+      "changer_amount":0.0,
+      "supplied_cash_amount":0.0,
+      "cashless_transaction_amount":0.0,
+      "product_value_amount":0.0,
+      "difference_amount":0.0,
+      "total_in_coin_changer":69.3,
+      "total_in_bill_changer":0.0,
+      "total_in_changer":69.3,
+      "client":{
+        "name":"Cliente 1"
+      },
+      "location":{
+        "client_id":949,
+        "name":"Local 1"
+      },
+      "machine":{
+        "machine_model_id":82,
+        "asset_number":"1234"
+      },
+      "sales":[
+        {
+          "product": {
+            "name": "BISCOITO POLVILHO TRADICIONAL LEVEN",
+            "upc_code": "000004266320"
+          },
+          "quantity": 1,
+          "value": 2,
+          "payment_type": 1
+        },
+        {
+          "product": {
+            "name": "BARRA LEVEN AVELA",
+            "upc_code": "4257751"
+          },
+          "quantity": 2,
+          "value": 6,
+          "payment_type": 1
+        },
+        {
+          "product": {
+            "name": "BARRA LEVEN AVELA",
+            "upc_code": "4257751"
+          },
+          "quantity": 1,
+          "value": 6,
+          "payment_type": 2
+        },
+        {
+          "product": {
+            "name": "AGUA MIN MINALBA C/GAS 510ML",
+            "upc_code": "000000000004134059"
+          },
+          "quantity": 3,
+          "value": 6,
+          "payment_type": 2
+        },
+        {
+          "product": {
+            "name": "FANTA LARANJA LATA 350ML",
+            "upc_code": "000000000002027732"
+          },
+          "quantity": 2,
+          "value": 6,
+          "payment_type": 2
+        }
+      ]
+    }
+
+Erros
+-----
+
+==========  ====================================  ================
+status      descrição                             response body
+==========  ====================================  ================
+404         caixa ou instalação não encontrado    (vazio)
+==========  ====================================  ================
