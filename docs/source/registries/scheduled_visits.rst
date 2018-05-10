@@ -273,12 +273,12 @@ Opcionais
     * Valores permitidos: *true* para agendar a geração ou *false* se não.
 
   * *pick_list_scheduled_hour*: hora(UTC) da geração da pick list caso seja agendada a
-  data será a mesma do scheduled_visit.date
+    data será a mesma do scheduled_visit.date
 
     * Default 0 caso pick_list_scheduled seja true.
 
   * *pick_list_scheduled_minutes*: minutos da geração da pick list caso seja agendada a
-  data será a mesma do scheduled_visit.date
+    data será a mesma do scheduled_visit.date
 
     * Default 0 caso pick_list_scheduled seja true.
 
