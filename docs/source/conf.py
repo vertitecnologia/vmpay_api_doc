@@ -16,6 +16,7 @@ import sys
 import os
 import shlex
 import sphinx_rtd_theme
+import datetime
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
@@ -51,7 +52,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'VMpay API'
-copyright = u'2016, Verti Tecnologia'
+copyright = u"{0}, Verti Tecnologia".format(datetime.datetime.now().year)
 author = u'Verti Tecnologia'
 title = u'Documentação da API do VMpay'
 
