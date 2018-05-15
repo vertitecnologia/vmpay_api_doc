@@ -946,3 +946,4 @@ Resources aninhadas
    installations/planogram
    installations/audit
    installations/remote_command
+   installations/inventory_adjustment
