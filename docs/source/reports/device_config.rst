@@ -28,7 +28,7 @@ Este serviço suporta `paginação <../overview.html#paginacao>`_.
 
 * **equipment_id**: o id do equipamento dos ativos.
 
-  * Se passado, a consulta retorna somente ativos relacionados a essa VMbox.
+  * Se passado, a consulta retorna somente ativos relacionados a esse equipamento.
 
 * **kind**: o tipo do ativo.
 
@@ -60,7 +60,7 @@ Retorno
 * **installation_id**: o id da instalação do ativo.
 * **location_id**: o id do local do ativo.
 * **machine_id**: o id da máquina do ativo.
-* **vmbox**: o número de instalação e numero serial do equipamento.
+* **vmbox**: o número de etiqueta e o número de série do equipamento.
 * **kind**: o tipo do ativo.
 * **serial_number**: o número serial do ativo.
 * **model_number**: o número do modelo do ativo.
