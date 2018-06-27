@@ -48,6 +48,7 @@ Resources disponíveis
    :caption: Relatórios
 
    reports/alert
+   reports/device_config
    reports/session
    reports/pick_list
    reports/cashless_transaction
