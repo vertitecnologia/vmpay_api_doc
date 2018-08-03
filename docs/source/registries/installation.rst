@@ -46,6 +46,8 @@ Exemplo:
       "restock_mode": "restock_and_cash_collect",
       "restock_strategy": "allow_pick_list_or_full",
       "notifications_enabled": true,
+      "last_audit_began_at": "2017-08-02T17:59:14.000Z",
+      "last_audit_ended_at": "2017-08-02T17:59:16.000Z",
       "removed_at": null,
       "audit_enabled": true,
       "enable_audit_schedule": true,
@@ -86,6 +88,8 @@ Exemplo:
       "restock_mode": "restock_and_cash_collect",
       "restock_strategy": "allow_pick_list_or_full",
       "notifications_enabled": true,
+      "last_audit_began_at": "2017-08-02T17:59:14.000Z",
+      "last_audit_ended_at": "2017-08-02T17:59:16.000Z",
       "removed_at": null,
       "audit_enabled": true,
       "enable_audit_schedule": true,
@@ -107,6 +111,8 @@ Exemplo:
       "restock_mode": "restock_and_cash_collect",
       "restock_strategy": "require_pending_pick_list",
       "notifications_enabled": true,
+      "last_audit_began_at": "2017-08-02T17:59:14.000Z",
+      "last_audit_ended_at": "2017-08-02T17:59:16.000Z",
       "removed_at": "2014-11-21T19:40:14.000-02:00",
       "audit_enabled": false,
       "enable_audit_schedule": false,
@@ -236,6 +242,8 @@ Segue um exemplo de retorno:
       "restock_mode": "restock_and_cash_collect",
       "restock_strategy": "allow_pick_list_or_full",
       "notifications_enabled": true,
+      "last_audit_began_at": "2017-08-02T17:59:14.000Z",
+      "last_audit_ended_at": "2017-08-02T17:59:16.000Z",
       "removed_at": "2016-01-26T19:21:27.000-02:00",
       "audit_enabled": true,
       "enable_audit_schedule": true,
@@ -427,6 +435,8 @@ Request::
         "restock_mode": "restock_and_cash_collect",
         "restock_strategy": "allow_pick_list_or_full",
         "notifications_enabled": true,
+        "last_audit_began_at": "2017-08-02T17:59:14.000Z",
+        "last_audit_ended_at": "2017-08-02T17:59:16.000Z",
         "audit_enabled": true,
         "enable_audit_schedule": true,
         "audit_schedule": "7:00 12:30 18:00 23:50",
@@ -609,6 +619,8 @@ Exemplo:
     "restock_mode": "restock_and_cash_collect",
     "restock_strategy": "allow_pick_list_or_full",
     "notifications_enabled": true,
+    "last_audit_began_at": null,
+    "last_audit_ended_at": null,
     "removed_at": null,
     "audit_enabled": true,
     "enable_audit_schedule": true,
@@ -728,8 +740,9 @@ Request::
   {
     "installation": {
       "location_id": 13,
+      "equipment_id": 111,
       "place": "Recepção 2",
-      "notifications_enabled": false
+      "notifications_enabled": false,
     }
   }
 
@@ -738,7 +751,7 @@ Campos
 
 Ao menos um campo interno a *installation* deve ser passado.
 
-Somente os parâmetros *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule* e *visit_schedule* são considerados; os demais são ignorados.
+Somente os parâmetros *equipment_id*, *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule* e *visit_schedule* são considerados; os demais são ignorados.
 
 Não é permitido atualizar um planograma ativo, somente cadastrar um outro planograma pendente. Para tanto, ver Planogramas.
 
@@ -761,12 +774,14 @@ Exemplo:
     "updated_at": "2016-02-15T17:23:34.353-02:00",
     "location_id": 185,
     "machine_id": 612,
-    "equipment_id": 314,
+    "equipment_id": 111,
     "place": "Recepção 2",
     "cash_mode": "cash_and_cashless",
     "restock_mode": "restock_and_cash_collect",
     "restock_strategy": "allow_pick_list_or_full",
     "notifications_enabled": false,
+    "last_audit_began_at": "2017-08-02T17:59:14.000Z",
+    "last_audit_ended_at": "2017-08-02T17:59:16.000Z",
     "removed_at": null,
     "audit_enabled": true,
     "enable_audit_schedule": true,
