@@ -728,8 +728,9 @@ Request::
   {
     "installation": {
       "location_id": 13,
+      "equipment_id": 111,
       "place": "Recepção 2",
-      "notifications_enabled": false
+      "notifications_enabled": false,
     }
   }
 
@@ -738,7 +739,7 @@ Campos
 
 Ao menos um campo interno a *installation* deve ser passado.
 
-Somente os parâmetros *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule* e *visit_schedule* são considerados; os demais são ignorados.
+Somente os parâmetros *equipment_id*, *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule* e *visit_schedule* são considerados; os demais são ignorados.
 
 Não é permitido atualizar um planograma ativo, somente cadastrar um outro planograma pendente. Para tanto, ver Planogramas.
 
@@ -761,7 +762,7 @@ Exemplo:
     "updated_at": "2016-02-15T17:23:34.353-02:00",
     "location_id": 185,
     "machine_id": 612,
-    "equipment_id": 314,
+    "equipment_id": 111,
     "place": "Recepção 2",
     "cash_mode": "cash_and_cashless",
     "restock_mode": "restock_and_cash_collect",
