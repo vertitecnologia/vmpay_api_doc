@@ -58,6 +58,11 @@ Exemplo::
       "upc_code": "93",
       "barcode": null,
       "external_id": null,
+      "packing": {
+        "id":15,
+        "name": "Caixa com 10 unidades",
+        "quantity":10
+      },
       "url": "http://localhost:4000/api/v1/products/165"
     }
   ]
@@ -129,7 +134,10 @@ Request::
       "category_id": 21,
       "upc_code": 111,
       "barcode": "1234567891",
-      "external_id": '123qwe'
+      "external_id": '123qwe',
+      "good_packing_attributes": {
+        "packing_id": 15
+      }
     }
   }
 
@@ -153,6 +161,11 @@ Opcionais
   * *upc_code*: código do produto.
   * *barcode*: código de barras do produto, a ser utilizado no micro market.
   * *external_id*: identificador externo do produto.
+  * *good_packing_attributes*: Array com atributos do packing associado
+
+    * *packing_id*: Id do packing associado ao insumo. É necessário que o packing tenha "default"(Unidade) como unidade de medida, caso contrário ele é ignorado.
+
+Retorno
 
 Retorno
 -------
@@ -176,6 +189,11 @@ Exemplo::
     "upc_code": "111",
     "barcode": "1234567891",
     "external_id": '123qwe',
+    "packing": {
+      "id":15,
+      "name": "Caixa com 10 unidades",
+      "quantity":10
+    },
     "url": "http://localhost:4000/api/v1/products/2830"
   }
 
@@ -230,6 +248,21 @@ Campos
 
 Ao menos um campo interno a *product* deve ser passado.
 
+Caso se deseje remover o packing, deve-se adicionar o atributo *_destroy* com
+valor *true* à chamada como no exemplo abaixo:
+
+Exemplo exclusão de packing::
+
+  {
+    "product": {
+      "name": "Schweppes Guaraná",
+      "good_packing_attributes": {
+        "id": 15,
+        "_destroy": true
+      }
+    }
+  }
+
 Retorno
 -------
 
@@ -252,6 +285,11 @@ Exemplo::
     "upc_code": "111",
     "barcode": "1234567891",
     "external_id": null,
+    "packing": {
+      "id":15,
+      "name": "Caixa com 10 unidades",
+      "quantity":10
+    },
     "url": "http://localhost:4000/api/v1/products/2830"
   }
 
@@ -369,6 +407,10 @@ Opcionais
 * *vendible*
 
   * *upc_code*: código do produto.
+  * *good_packing_attributes*: Array com atributos do packing associado
+
+    * *packing_id*: Id do packing associado ao insumo. É necessário que o packing tenha "default"(Unidade) como unidade de medida, caso contrário ele é ignorado.
+
 
 Atualizar (obsoleto)
 --------------------

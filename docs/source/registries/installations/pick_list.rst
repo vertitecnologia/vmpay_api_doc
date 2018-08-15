@@ -142,8 +142,17 @@ Exemplo::
         "good_id": 533
       },
       {
-        "id": 167192,
-        "planogram_item_id": 93481,
+        "id":167192
+        "planogram_item_id":93481,
+        "quantity":12,
+        "ignored":false,
+        "packing_id":2,
+        "packing_quantity":1,
+        "good_id":2225
+      },
+      {
+        "id": 167193,
+        "planogram_item_id": 93482,
         "quantity": 2,
         "ignored": false,
         "good_id": 533
@@ -223,7 +232,14 @@ Obrigatórios
 Opcionais
 ^^^^^^^^^
 
-Nenhum.
+* *pick_list*
+
+  * *items_attributes*: um array contendo os items do pick list.
+
+    * *packing_id*: o id do packing associado ao produto/insumo do item.
+    * *packing_quantity*: a quantidade de packings a ser reabastecida.
+
+Caso os parâmetros opcionais sejam passados, o valor do *quantity* é reescrito para a quantidade existente no packing multiplicado pelo número de packings.
 
 Retorno
 -------
@@ -337,7 +353,14 @@ Obrigatórios
 Opcionais
 ^^^^^^^^^
 
-Nenhum.
+* *pick_list*
+
+  * *items_attributes*: um array contendo os items do pick list.
+
+  * *packing_id*: o id do packing associado ao produto/insumo do item.
+  * *packing_quantity*: a quantidade de packings a ser reabastecida.
+
+Caso os parâmetros opcionais sejam passados, o valor do *quantity* é reescrito para a quantidade existente no packing multiplicado pelo número de packings.
 
 Retorno
 -------
