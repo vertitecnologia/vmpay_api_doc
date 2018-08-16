@@ -146,7 +146,6 @@ Exemplo::
         "planogram_item_id":93481,
         "quantity":12,
         "ignored":false,
-        "packing_id":2,
         "packing_quantity":1,
         "good_id":2225
       },
@@ -236,10 +235,9 @@ Opcionais
 
   * *items_attributes*: um array contendo os items do pick list.
 
-    * *packing_id*: o id do packing associado ao produto/insumo do item.
-    * *packing_quantity*: a quantidade de packings a ser reabastecida.
+    * *packing_quantity*: a quantidade de packings,associado ao item, a ser reabastecida.
 
-Caso os parâmetros opcionais sejam passados, o valor do *quantity* é reescrito para a quantidade existente no packing multiplicado pelo número de packings.
+Caso o parâmetro opcional seja passado, o valor do *quantity* é reescrito para a quantidade existente no packing multiplicado pelo número de packings.
 
 Retorno
 -------
@@ -357,10 +355,9 @@ Opcionais
 
   * *items_attributes*: um array contendo os items do pick list.
 
-  * *packing_id*: o id do packing associado ao produto/insumo do item.
-  * *packing_quantity*: a quantidade de packings a ser reabastecida.
+    * *packing_quantity*: o número de packings, a ser reabastecido.
 
-Caso os parâmetros opcionais sejam passados, o valor do *quantity* é reescrito para a quantidade existente no packing multiplicado pelo número de packings.
+Caso o parâmetro opcional seja passado e exista um packing associado ao respectivo item, o valor do *quantity* é reescrito para a quantidade existente no packing multiplicado por *packing_quantity*.
 
 Retorno
 -------
