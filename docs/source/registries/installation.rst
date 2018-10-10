@@ -90,7 +90,7 @@ Exemplo:
       "notifications_enabled": true,
       "last_audit_began_at": "2017-08-02T17:59:14.000Z",
       "last_audit_ended_at": "2017-08-02T17:59:16.000Z",
-      "removed_at": null,
+      "removed_at": "2014-11-20T10:14:31.000-02:00",
       "audit_enabled": true,
       "enable_audit_schedule": true,
       "audit_schedule": "6:00 10:00 14:00 18:00 22:00 23:50 (padrão)",
@@ -152,6 +152,10 @@ status  descrição
 200     OK
 ======  =========
 
+* O campo *removed_at* diz respeito a data em que a instalação foi baixada. Os possíveis valores são os seguintes:
+
+  * *Data e hora em formato ISO 8601*: Data e hora em que a instalação foi baixada.
+  * *null*: Caso o valor deste campo seja null, indica que a instalação não foi baixada, ou seja, que a mesma está ativa.
 
 * O campo *audit_schedule* é o calendário de auditoria. Corresponde aos horários separados por espaço, seguidos de uma descrição entre parênteses que indica qual valor é utilizado: o da *instalação*, se o mesmo foi preenchido; ou o *padrão*, caso tenha sido deixado em branco e o valor de *enable_audit_schedule* for *true*. Se *enable_audit_schedule* for *false*, o valor deste campo será vazio.
 * O campo *operation_status* diz respeito ao estado de operação da instalação. Os possíveis valores são os seguintes:
@@ -196,7 +200,7 @@ status  descrição
   * *difference*: Diferença de caixa.
   * *vends*: Totais de vendas discrimadas por produto.
 
-* O campo *connection* informa os dados de conexão:
+* O campo *connection* informa os dados de conexão. Este campo é omitido caso o equipamento não possua nenhuma interface de conexão:
 
   * *kind*: Tipo de conexão (GPRS, ETHERNET ou WIFI)
   * *label*: Label da interface de conexão
@@ -214,7 +218,7 @@ status  descrição
     * *rssi*: Sinal da conexão
     * *essid*: Nome da rede wifi
 
-* O campo *services* informa o estado dos serviços
+* O campo *services* informa o estado dos serviços. Este campo é omitido caso o equipamento não possua nenhuma das funcionalidades:
 
   * *bluetooth*:
 
