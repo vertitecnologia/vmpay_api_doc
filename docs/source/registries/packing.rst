@@ -1,13 +1,13 @@
-#######
-Insumos
-#######
+########
+Packings
+########
 
 Listar
 ======
 
 ::
 
-  GET /api/v1/inputs
+    GET /api/v1/packings
 
 Retorno
 -------
@@ -24,29 +24,22 @@ Exemplo:
 
   [
     {
-      "id": 3044,
-      "created_at": "2016-01-20T16:27:55.000-02:00",
-      "updated_at": "2016-01-20T16:27:55.000-02:00",
-      "category_id": 470,
-      "name": "Leite em pó",
-      "unit": "gram",
-      "external_id": null,
-      "url": "http://vmpay.vertitecnologia.com.br/api/v1/inputs/3044"
+      "id":2,
+      "created_at":"2018-08-08T14:22:34.000Z",
+      "updated_at":"2018-08-08T14:22:34.000Z",
+      "name":"Caixa de Latas",
+      "unit":"default",
+      "quantity":12,
+      "good_ids":[2,10352,17480,6423,11,6424,17481,17483,17479]
     },
     {
-      "id": 3045,
-      "created_at": "2016-01-20T16:28:04.000-02:00",
-      "updated_at": "2016-01-20T16:28:04.000-02:00",
-      "category_id": 470,
-      "name": "Café em pó",
-      "unit": "gram",
-      "external_id": null,
-      "packing": {
-        "id":2,
-        "name": "Pacote 1kg",
-        "quantity":1000
-      },
-      "url": "http://vmpay.vertitecnologia.com.br/api/v1/inputs/3045"
+      "id":22,
+      "created_at":"2018-08-07T13:22:34.000Z",
+      "updated_at":"2018-08-07T13:42:34.000Z",
+      "name":"Pacote 1kg",
+      "unit":"gram",
+      "quantity":1000,
+      "good_ids":[3,102,482,484,485,747]
     }
   ]
 
@@ -55,7 +48,7 @@ Ver
 
 ::
 
-  GET /api/v1/inputs/[id]
+    GET /api/v1/packings/[id]
 
 Parâmetros de URL:
 ------------------
@@ -63,7 +56,7 @@ Parâmetros de URL:
 =========  ===============  ===========
 parâmetro  descrição        obrigatório
 =========  ===============  ===========
-id         id do insumo     sim
+id         id do packing    sim
 =========  ===============  ===========
 
 Retorno
@@ -80,14 +73,13 @@ Exemplo:
 ::
 
   {
-    "id": 3044,
-    "created_at": "2016-01-20T16:27:55.000-02:00",
-    "updated_at": "2016-01-20T16:27:55.000-02:00",
-    "category_id": 470,
-    "name": "Leite em pó",
-    "unit": "gram",
-    "external_id": null,
-    "url": "http://vmpay.vertitecnologia.com.br/api/v1/inputs/3044"
+    "id":2,
+    "created_at":"2018-08-08T14:22:34.000Z",
+    "updated_at":"2018-08-08T14:22:34.000Z",
+    "name":"Caixa de Latas",
+    "unit":"default",
+    "quantity":12,
+    "good_ids":[2,10352,17480,6423,11,6424,17481,17483,17479]
   }
 
 Erros
@@ -96,7 +88,7 @@ Erros
 ==========  ========================  =========================================
 status      descrição                 response body
 ==========  ========================  =========================================
-404         insumo não encontrado     { "status": "404", "error": "Not Found" }
+404         registro não encontrado    {"error":"Registro não encontrado"}
 ==========  ========================  =========================================
 
 Criar
@@ -104,19 +96,15 @@ Criar
 
 ::
 
-    POST /api/v1/inputs
+    POST /api/v1/packings
 
 Request::
 
   {
-    "input": {
-      "category_id": 11,
-      "name": "Leite em pó",
-      "unit": "gram",
-      "external_id": 'qwe123',
-      "good_packing_attributes": {
-        "packing_id": 2
-      }
+    "packing": {
+      "name":"Pacote 2kg",
+      "unit":"gram",
+      "quantity":2000
     }
   }
 
@@ -126,23 +114,15 @@ Campos
 Obrigatórios
 ^^^^^^^^^^^^
 
-* *input*
+* *packing*
 
-  * *category_id*: id da categoria.
-  * *name*: Nome do insumo.
-  * *unit*: A unidade de medida do insumo.
+  * *name*: nome do packing.
+  * *unit*: A unidade de medida do packing.
 
     * Valores permitidos: *default* (Unidade), milliliter (Mililitro) e *gram* (Grama).
 
-Opcionais
-^^^^^^^^^
+  * *quantity*: A quantidade em medidas de *unit* presente no packing.
 
-* *input*
-
-  * *external_id*: identificador externo do insumo.
-  * *good_packing_attributes*: Array com atributos do packing associado
-
-    * *packing_id*: Id do packing associado ao insumo. É necessário que o packing tenha a mesma unidade de medida do insumo, caso contrário ele é ignorado.
 
 Retorno
 -------
@@ -158,19 +138,12 @@ Exemplo:
 ::
 
   {
-    "id": 2829,
-    "created_at": "2016-02-16T08:53:54.731-02:00",
-    "updated_at": "2016-02-16T08:53:54.731-02:00",
-    "category_id": 11,
-    "name": "Leite em pó",
-    "unit": "gram",
-    "external_id": 'qwe123',
-    "packing": {
-      "id":2,
-      "name": "Pacote 1kg",
-      "quantity":1000
-    },
-    "url": "http://localhost:4000/api/v1/inputs/2829"
+    "id":23,
+    "created_at":"2018-08-15T12:22:34.000Z",
+    "updated_at":"2018-08-15T12:22:34.000Z",
+    "name":"Pacote 2kg",
+    "unit":"gram",
+    "quantity":2000,
   }
 
 Erros
@@ -180,7 +153,6 @@ Erros
 status      descrição                             response body
 ==========  ====================================  ====================================================
 400         parâmetros faltando                   { "status": "400", "error": "Bad Request" }
-401         não autorizado                        (vazio)
 422         erro ao criar                         ver exemplo abaixo
 ==========  ====================================  ====================================================
 
@@ -189,8 +161,8 @@ status      descrição                             response body
 ::
 
   {
-    "name": [
-      "já está em uso"
+    "unit": [
+      "não pode ficar em branco"
     ]
   }
 
@@ -199,7 +171,7 @@ Atualizar
 
 ::
 
-  PATCH /api/v1/inputs/[id]
+    PATCH /api/v1/packings/[id]
 
 Parâmetros de URL:
 ------------------
@@ -207,36 +179,21 @@ Parâmetros de URL:
 =========  ===============  ===========
 parâmetro  descrição        obrigatório
 =========  ===============  ===========
-id         id do insumo     sim
+id         id do packing    sim
 =========  ===============  ===========
 
 Request::
 
-    {
-      "input": {
-        "name": "Novo nome"
-      }
+  {
+    "packing": {
+      "name": "Novo nome"
     }
+  }
 
 Campos
 ------
 
-Ao menos um campo interno a *input* deve ser passado.
-
-Caso se deseje remover o packing, deve-se adicionar o atributo *_destroy* com
-valor *true* à chamada como no exemplo abaixo:
-
-Exemplo exclusão de packing::
-
-  {
-    "input": {
-      "name": "Novo nome",
-      "good_packing_attributes": {
-        "id": 2,
-        "_destroy": true
-      }
-    }
-  }
+Ao menos um campo interno a *packing* deve ser passado.
 
 Retorno
 -------
@@ -252,19 +209,12 @@ Exemplo:
 ::
 
   {
-    "id": 2829,
-    "created_at": "2016-02-16T08:53:54.000-02:00",
-    "updated_at": "2016-02-16T08:59:35.600-02:00",
-    "category_id": 11,
-    "name": "Novo nome",
-    "unit": "gram",
-    "external_id": null,
-    "packing": {
-      "id":2,
-      "name": "Pacote 1kg",
-      "quantity":1000
-    },
-    "url": "http://localhost:4000/api/v1/inputs/2829"
+    "id":23,
+    "created_at":"2018-08-15T12:22:34.000Z",
+    "updated_at":"2018-08-15T12:22:34.000Z",
+    "name":"Novo nome",
+    "unit":"gram",
+    "quantity":2000,
   }
 
 Erros
@@ -274,8 +224,7 @@ Erros
 status      descrição                             response body
 ==========  ====================================  ====================================================
 400         parâmetros faltando                   { "status": "400", "error": "Bad Request" }
-401         não autorizado                        (vazio)
-404         insumo não encontrado                 { "status": "404", "error": "Not Found" }
+404         registro não encontrado                { "status": "404", "error": "Not Found" }
 422         erro ao atualizar                     ver exemplo abaixo
 ==========  ====================================  ====================================================
 
@@ -285,7 +234,7 @@ status      descrição                             response body
 
   {
     "name": [
-      "não pode ficar em branco"
+      "é muito longo (máximo: 255 caracteres)"
     ]
   }
 
@@ -294,7 +243,7 @@ Excluir
 
 ::
 
-  DELETE /api/v1/inputs/[id]
+    DELETE /api/v1/packings/[id]
 
 Parâmetros de URL:
 ------------------
@@ -302,7 +251,7 @@ Parâmetros de URL:
 =========  ===============  ===========
 parâmetro  descrição        obrigatório
 =========  ===============  ===========
-id         id do insumo     sim
+id         id do packing    sim
 =========  ===============  ===========
 
 Retorno
@@ -320,5 +269,5 @@ Erros
 ==========  ====================================  ====================================================
 status      descrição                             response body
 ==========  ====================================  ====================================================
-404         insumo não encontrado                 { "status": "404", "error": "Not Found" }
+404         registro não encontrado                { "status": "404", "error": "Not Found" }
 ==========  ====================================  ====================================================

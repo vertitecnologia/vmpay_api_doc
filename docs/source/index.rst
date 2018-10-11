@@ -24,6 +24,7 @@ Resources disponíveis
    registries/input
    registries/location
    registries/machine
+   registries/packing
    registries/product
    registries/compound_product
    registries/route
