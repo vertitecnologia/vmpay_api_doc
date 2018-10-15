@@ -274,6 +274,10 @@ Segue um exemplo de retorno:
             "alert_level": 4,
             "desired_price": 2.5,
             "logical_locator": 1,
+            "physical_locators":[
+              "1",
+              "2"
+            ],
             "current_balance": 11.0
           },
           {
@@ -286,6 +290,9 @@ Segue um exemplo de retorno:
             "alert_level": 2,
             "desired_price": 2.3,
             "logical_locator": 2,
+            "physical_locators":[
+              "3"
+            ],
             "current_balance": 8.0
           },
           {
@@ -295,6 +302,9 @@ Segue um exemplo de retorno:
             "good_id": 23,
             "desired_price": 4.0,
             "logical_locator": 3,
+            "physical_locators":[
+              "4"
+            ],
             "children": { "1": 2, "2": 1 }
           },
           {
@@ -324,6 +334,9 @@ Segue um exemplo de retorno:
             "name": "5",
             "desired_price": 3.0,
             "logical_locator": 6,
+            "physical_locators":[
+              "5"
+            ],
             "children": { "4": 20, "5": 15 }
           }
         ]
@@ -460,45 +473,45 @@ Request::
               },
               {
                 "type": "Coil",
-                "name": "3",
-                "good_id": 12,
-                "capacity": 10,
-                "par_level": 10,
-                "alert_level": 2,
-                "desired_price": 2.3,
+                "name": "3,4",
+                "good_id": 11,
+                "capacity": 20,
+                "par_level": 20,
+                "alert_level": 4,
+                "desired_price": 2.5,
                 "logical_locator": 2
               },
               {
-                "type": "VirtualCoil",
-                "name": "4",
-                "good_id": 23,
-                "desired_price": 4.0,
-                "logical_locator": 3,
-                "children": { "1": 2, "2": 1 }
+                "type": "Canister",
+                "good_id": 12,
+                "capacity": 3000,
+                "par_level": 3000,
+                "alert_level": 500,
+                "logical_locator": 3
               },
               {
                 "type": "Canister",
-                "good_id": 26,
-                "capacity": 2000,
-                "par_level": 2000,
-                "alert_level": 200,
+                "good_id": 13,
+                "capacity": 300,
+                "par_level": 300,
+                "alert_level": 50,
                 "logical_locator": 4
               },
               {
-                "type": "Canister",
-                "good_id": 27,
-                "capacity": 3000,
-                "par_level": 3000,
-                "alert_level": 300,
-                "logical_locator": 5
+                "type": "VirtualCanister",
+                "name": "5",
+                "good_id": 15,
+                "desired_price": 3.5,
+                "logical_locator": 5,
+                "children": { "3": 21, "4": 1 }
               },
               {
-                "type": "VirtualCanister",
-                "good_id": 30,
-                "name": "5",
-                "desired_price": 3.0,
+                "type": "VirtualCoil",
+                "name": "6",
+                "good_id": 23,
+                "desired_price": 6.0,
                 "logical_locator": 6,
-                "children": { "4": 20, "5": 15 }
+                "children": { "1": 2, "2": 1 }
               }
             ]
           }
@@ -548,7 +561,7 @@ Obrigatórios
       * Canaletas:
 
         * *type*: deve ser igual a "Coil".
-        * *name*: o número da canaleta. Caso se trate de um agrupamento de canaletas, os números devem ser separados por vírgulas.
+        * *name*: o **número da canaleta**. Caso se trate de um agrupamento de canaletas, os números devem ser separados por vírgulas. Este campo será mapeado em um vetor no campo *physical_locators* como pode ser observado no exemplo de retorno.
         * *good_id*: id do produto. Nesse caso não pode ser composto. `Good <https://en.wikipedia.org/wiki/Good_%28economics%29>`_ neste caso se traduz como `bem <https://pt.wikipedia.org/wiki/Bem_%28economia%29>`_.
         * *capacity*: a capacidade total da canaleta. No caso de agrupameto de canaletas, deve-se colocar aqui a capacidade total, somando-se todas as canaletas.
         * *par_level*: o nível de par da canaleta. No caso de agrupameto de canaletas, deve-se colocar aqui o nível de par total, somando-se todas as canaletas.
@@ -559,11 +572,11 @@ Obrigatórios
       * Combos:
 
         * *type*: deve ser igual a "VirtualCoil".
-        * *name*: o número de seleção do combo.
+        * *name*: o **número de seleção do combo**. Este campo será mapeado em um vetor no campo *physical_locators* como pode ser observado no exemplo de retorno.
         * *good_id*: id do produto. Nesse caso deve ser composto e com o *type* *Combo*. `Good <https://en.wikipedia.org/wiki/Good_%28economics%29>`_ neste caso se traduz como `bem <https://pt.wikipedia.org/wiki/Bem_%28economia%29>`_.
         * *desired_price*: o preço unitário desejado.
         * *logical_locator*: trata-se do identificador lógico do combo. Deve-se gerar um inteiro único dentro de todos os items do planograma.
-        * *children*: as canaletas e suas quantidades que compõe o combo. É um objeto cujas chaves são identificares lógicos (campo *logical_locator*) das canaletas e os valores as quantidades. No exemplo acima, o combo é composto de 2 produtos da canaleta cujo *name* é "1,2" - ou seja, canaletas 1 e 2 agrupadas - e 1 produto da canaleta 3.
+        * *children*: as canaletas e suas quantidades que compõe o combo. É um objeto cujas chaves são identificadores lógicos (campo *logical_locator*) das canaletas e os valores as quantidades. No exemplo acima, o combo é composto de 2 produtos da canaleta cujo *name* é "1,2" - ou seja, canaletas 1 e 2 agrupadas - e 1 produto da canaleta cujo *name* é "3,4".
 
       * Canisters:
 
@@ -577,11 +590,11 @@ Obrigatórios
       * Seleções:
 
         * *type*: deve ser igual a "VirtualCanister".
-        * *name*: o número da seleção.
+        * *name*: o **número da seleção**. Este campo será mapeado em um vetor no campo *physical_locators* como pode ser observado no exemplo de retorno.
         * *good_id*: id do produto. Nesse caso deve ser composto e com o *type* *Mixture*. `Good <https://en.wikipedia.org/wiki/Good_%28economics%29>`_ neste caso se traduz como `bem <https://pt.wikipedia.org/wiki/Bem_%28economia%29>`_.
         * *desired_price*: o preço unitário desejado.
         * *logical_locator*: trata-se do identificador lógico da seleção. Deve-se gerar um inteiro único dentro de todos os items do planograma.
-        * *children*: os canisters e suas quantidades que compõe a seleção. É um objeto cujas chaves são identificares lógicos (campo *logical_locator*) dos canisters e os valores as quantidades. No exemplo acima, digamos que o insumo de id 26 seja *Café em pó* e o de id 27, *Leite em pó*. Logo, a seleção é composta de 20 gramas de Café em pó e 15 gramas de Leite em pó.
+        * *children*: os canisters e suas quantidades que compõe a seleção. É um objeto cujas chaves são identificadores lógicos (campo *logical_locator*) dos canisters e os valores as quantidades. No exemplo acima, digamos que o insumo de id 12 seja *Chocolate Solúvel com Leite* e o de id 13, *Copo Plástico 160 ml*. Logo, a seleção é composta de 21 gramas de Chocolate Solúvel com Leite e 1 unidade de Copo Plástico 160 ml.
 
 Opcionais
 ^^^^^^^^^
@@ -642,7 +655,7 @@ Exemplo:
       "started_at": "2016-02-15T16:20:36.603-02:00",
       "items": [
         {
-          "id": 113835,
+          "id": 113846,
           "created_at": "2016-02-15T16:19:36.843-02:00",
           "updated_at": "2016-02-15T16:19:36.843-02:00",
           "planogram_id": 2950,
@@ -661,12 +674,159 @@ Exemplo:
             "2"
           ],
           "children": null,
-          "current_balance": 20,
+          "current_balance": 0,
           "good": {
             "id": 10,
             "name": "Amendoin",
             "upc_code": "77",
             "upc_code_name": "77 - Amendoin",
+            "unit_description": "Unidade",
+            "unit_symbol": "un"
+          }
+        },
+        {
+          "id": 113847,
+          "created_at": "2016-02-15T16:19:36.843-02:00",
+          "updated_at": "2016-02-15T16:19:36.843-02:00",
+          "planogram_id": 2950,
+          "type": "Coil",
+          "good_id": 11,
+          "name": "3,4",
+          "capacity": 20,
+          "par_level": 20,
+          "alert_level": 4,
+          "desired_price": 2.5,
+          "modified": false,
+          "undefined": false,
+          "logical_locator": "2",
+          "physical_locators": [
+            "3",
+            "4"
+          ],
+          "children": null,
+          "current_balance": 0,
+          "good": {
+            "id": 11,
+            "name": "Coca Cola",
+            "upc_code": "77",
+            "upc_code_name": "77 - Coca Cola",
+            "unit_description": "Unidade",
+            "unit_symbol": "un"
+          }
+        },
+        {
+          "id":113848,
+          "created_at":"2016-02-15T16:19:36.843-02:00",
+          "updated_at":"2016-02-15T16:19:36.843-02:00",
+          "planogram_id":2950,
+          "type":"Canister",
+          "good_id":12,
+          "name":"Chocolate Solúvel com Leite 1kg",
+          "capacity":3000.0,
+          "par_level":3000.0,
+          "alert_level":500.0,
+          "desired_price":null,
+          "modified": false,
+          "undefined":false,
+          "logical_locator":"3",
+          "physical_locators":[],
+          "children":null,
+          "current_balance":0,
+          "good":{
+            "id":12,
+            "name":"Chocolate Solúvel com Leite 1kg",
+            "upc_code":null,
+            "upc_code_name":"Chocolate Solúvel com Leite 1kg",
+            "unit_description":"Grama",
+            "unit_symbol":"g"
+          }
+        },
+        {
+          "id":113849,
+          "created_at":"2016-02-15T16:19:36.843-02:00",
+          "updated_at":"2016-02-15T16:19:36.843-02:00",
+          "planogram_id":2950,
+          "type":"Canister",
+          "good_id":13,
+          "name":"Copo Plástico 160 ml",
+          "capacity":300.0,
+          "par_level":300.0,
+          "alert_level":50.0,
+          "desired_price":null,
+          "modified": false,
+          "undefined":false,
+          "logical_locator":"4",
+          "physical_locators":[],
+          "children":null,
+          "current_balance":0,
+          "good":{
+            "id":13,
+            "name":"Copo Plástico 160 ml",
+            "upc_code":null,
+            "upc_code_name":"Copo Plástico 160 ml",
+            "unit_description":"Unidade",
+            "unit_symbol":"un"
+          }
+        },
+        {
+          "id": 113850,
+          "created_at": "2016-02-15T16:19:36.843-02:00",
+          "updated_at": "2016-02-15T16:19:36.843-02:00",
+          "planogram_id": 2950,
+          "type": "VirtualCanister",
+          "good_id": 15,
+          "name": "5",
+          "capacity": 10,
+          "par_level": 10,
+          "alert_level": 2,
+          "desired_price": 3.5,
+          "modified": false,
+          "undefined": false,
+          "logical_locator": "5",
+          "physical_locators": [
+            "5"
+          ],
+          "children": "children": {
+            "3": "21.00",
+            "4": "1.00"
+          },
+          "current_balance": 0,
+          "good": {
+            "id": 15,
+            "name": "Dose Chocolate Quente",
+            "upc_code": null,
+            "upc_code_name": "Dose Chocolate Quente",
+            "unit_description": "Unidade",
+            "unit_symbol": "un"
+          }
+        },
+        {
+          "id": 113851,
+          "created_at": "2016-02-15T16:19:36.843-02:00",
+          "updated_at": "2016-02-15T16:19:36.843-02:00",
+          "planogram_id": 2950,
+          "type": "VirtualCoil",
+          "good_id": 23,
+          "name": "6",
+          "capacity": 10,
+          "par_level": 10,
+          "alert_level": 4,
+          "desired_price": 6,
+          "modified": false,
+          "undefined": false,
+          "logical_locator": "6",
+          "physical_locators": [
+            "6"
+          ],
+          "children": {
+            "1": "2.00",
+            "2": "1.00"
+          },
+          "good": {
+            "id": 23,
+            "name": "2x Amendoins + 1x Coca Cola",
+            "upc_code": "0",
+            "upc_code_name": "0 - 2x Amendoins + 1x Coca Cola",
             "unit_description": "Unidade",
             "unit_symbol": "un"
           }
