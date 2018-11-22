@@ -32,6 +32,7 @@ Exemplo::
       "upc_code": "91",
       "barcode": "1234567890",
       "external_id": null,
+      "additional_barcodes": [],
       "url": "http://localhost:4000/api/v1/products/163"
     },
     {
@@ -45,6 +46,10 @@ Exemplo::
       "upc_code": "110",
       "barcode": "0987654321",
       "external_id": null,
+      "additional_barcodes": [
+        { "id": 123, "value": "10191817" },
+        { "id": 321, "value": "16151413" }
+      ],
       "url": "http://localhost:4000/api/v1/products/164"
     },
     {
@@ -58,6 +63,7 @@ Exemplo::
       "upc_code": "93",
       "barcode": null,
       "external_id": null,
+      "additional_barcodes": [],
       "packing": {
         "id":15,
         "name": "Caixa com 10 unidades",
@@ -105,6 +111,7 @@ Exemplo::
     "upc_code": "91",
     "barcode": "1234567890",
     "external_id": null,
+    "additional_barcodes": [],
     "url": "http://localhost:4000/api/v1/products/163"
   }
 
@@ -134,7 +141,11 @@ Request::
       "category_id": 21,
       "upc_code": 111,
       "barcode": "1234567891",
-      "external_id": '123qwe',
+      "external_id": "123qwe",
+      "additional_barcodes_attributes": [
+        { "value": "10191817" },
+        { "value": "16151413" }
+      ],
       "good_packing_attributes": {
         "packing_id": 15
       }
@@ -161,7 +172,11 @@ Opcionais
   * *upc_code*: código do produto.
   * *barcode*: código de barras do produto, a ser utilizado no micro market.
   * *external_id*: identificador externo do produto.
-  * *good_packing_attributes*: Array com atributos do packing associado
+  * *additional_barcodes_attributes*: Array com códigos de barras adicionais.
+
+    * *value*: o código de barras.
+
+  * *good_packing_attributes*: Array com atributos do packing associado.
 
     * *packing_id*: Id do packing associado ao insumo. É necessário que o packing tenha "default"(Unidade) como unidade de medida, caso contrário ele é ignorado.
 
@@ -188,7 +203,11 @@ Exemplo::
     "name": "Schweppes Citrus",
     "upc_code": "111",
     "barcode": "1234567891",
-    "external_id": '123qwe',
+    "external_id": "123qwe",
+    "additional_barcodes": [
+      { "id": 123, "value": "10191817" },
+      { "id": 321, "value": "16151413" }
+    ],
     "packing": {
       "id":15,
       "name": "Caixa com 10 unidades",
@@ -248,10 +267,20 @@ Campos
 
 Ao menos um campo interno a *product* deve ser passado.
 
-Caso se deseje remover o packing, deve-se adicionar o atributo *_destroy* com
-valor *true* à chamada como no exemplo abaixo:
+Caso se deseje remover um *additional_barcode*, deve-se adicionar o atributo
+*_destroy* com valor *true* à chamada como no exemplo abaixo::
 
-Exemplo exclusão de packing::
+  {
+    "product": {
+      "name": "Schweppes Guaraná",
+      "additional_barcodes_attributes": {
+        "id": 123,
+        "_destroy": true
+      }
+    }
+  }
+
+O mesmo vale para o *packing*::
 
   {
     "product": {
@@ -285,6 +314,10 @@ Exemplo::
     "upc_code": "111",
     "barcode": "1234567891",
     "external_id": null,
+    "additional_barcodes": [
+      { "id": 123, "value": "10191817" },
+      { "id": 321, "value": "16151413" }
+    ],
     "packing": {
       "id":15,
       "name": "Caixa com 10 unidades",
