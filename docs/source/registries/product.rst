@@ -273,10 +273,12 @@ Caso se deseje remover um *additional_barcode*, deve-se adicionar o atributo
   {
     "product": {
       "name": "Schweppes Guaraná",
-      "additional_barcodes_attributes": {
-        "id": 123,
-        "_destroy": true
-      }
+      "additional_barcodes_attributes": [
+        {
+          "id": 123,
+          "_destroy": true
+        }
+      ]
     }
   }
 
