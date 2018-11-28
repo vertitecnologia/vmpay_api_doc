@@ -102,6 +102,7 @@ Retorno
 * **eft_card_type_id**: o id do tipo de cartão utilizado nas transações cashless.
 * **coil**: o número do item de planograma em que ocorreu a transação cashless (canaleta, seleção ou combo).
 * **transaction_value**: o valor total da transação cashless.
+* **request_number**: o valor do NSU da rede.
 * **remote_credit**: um booleano indicando se a transação foi ou não um crédito remoto.
 * **client**: detalhes do cliente da transação cashless.
 * **location**: detalhes do local da transação cashless.
@@ -132,6 +133,7 @@ Segue um exemplo de retorno de consulta:
         "eft_card_type_id":1,
         "coil":"1",
         "transaction_value":2.5,
+        "request_number":"123000004",
         "remote_credit":false,
         "client": {
           "name":"Client X"
