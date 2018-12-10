@@ -53,6 +53,7 @@ Exemplo:
       "enable_audit_schedule": true,
       "audit_schedule": "7:00 12:30 18:00 23:50 (instalação)",
       "visit_schedule": [],
+      "enable_bluetooth": false,
       "operation_status": "green",
       "states": ["hatched"],
       "route_ids": [10, 68, 123],
@@ -94,7 +95,8 @@ Exemplo:
       "audit_enabled": true,
       "enable_audit_schedule": true,
       "audit_schedule": "6:00 10:00 14:00 18:00 22:00 23:50 (padrão)",
-      "visit_schedule": ["tuesday", "thursday"]
+      "visit_schedule": ["tuesday", "thursday"],
+      "enable_bluetooth": true,
       "operation_status": "yellow",
       "states": ["audit_failure", "hatched"],
       "route_ids": [10, 13]
@@ -117,7 +119,8 @@ Exemplo:
       "audit_enabled": false,
       "enable_audit_schedule": false,
       "audit_schedule": "",
-      "visit_schedule": ["monday", "wednesday", "friday"]
+      "visit_schedule": ["monday", "wednesday", "friday"],
+      "enable_bluetooth": true,
       "operation_status": "red",
       "states": ["extended_power_loss", "hatched"],
       "route_ids": [23]
@@ -253,6 +256,7 @@ Segue um exemplo de retorno:
       "enable_audit_schedule": true,
       "audit_schedule": "7:00 12:30 18:00 23:50 (instalação)",
       "visit_schedule": ["monday", "wednesday", "friday"],
+      "enable_bluetooth": false,
       "operation_status": "red",
       "states": ["extended_power_loss", "hatched"],
       "route_ids": [10, 13],
@@ -458,6 +462,7 @@ Request::
         "enable_audit_schedule": true,
         "audit_schedule": "7:00 12:30 18:00 23:50",
         "visit_schedule": ["monday", "wednesday", "friday"],
+        "enable_bluetooth": true,
         "planograms_attributes": [
           {
             "items_attributes": [
@@ -643,6 +648,7 @@ Exemplo:
     "enable_audit_schedule": true,
     "audit_schedule": "7:00 12:30 18:00 23:50 (instalação)",
     "visit_schedule": ["monday", "wednesday", "friday"],
+    "enable_bluetooth": true,
     "operation_status": "grey",
     "states": [],
     "route_ids": [],
@@ -915,7 +921,7 @@ Campos
 
 Ao menos um campo interno a *installation* deve ser passado.
 
-Somente os parâmetros *equipment_id*, *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule* e *visit_schedule* são considerados; os demais são ignorados.
+Somente os parâmetros *equipment_id*, *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule*, *visit_schedule* e *enable_bluetooth* são considerados; os demais são ignorados.
 
 Não é permitido atualizar um planograma ativo, somente cadastrar um outro planograma pendente. Para tanto, ver Planogramas.
 
@@ -951,6 +957,7 @@ Exemplo:
     "enable_audit_schedule": true,
     "audit_schedule": "7:00 12:30 18:00 23:50 (instalação)",
     "visit_schedule": ["monday", "wednesday", "friday"],
+    "enable_bluetooth": false,
     "operation_status": "green",
     "states": ["hatched"],
     "route_ids": [23],
