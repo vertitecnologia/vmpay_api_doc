@@ -921,7 +921,7 @@ Campos
 
 Ao menos um campo interno a *installation* deve ser passado.
 
-Somente os parâmetros *equipment_id*, *location_id*, *place*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule*, *visit_schedule* e *enable_bluetooth* são considerados; os demais são ignorados.
+Somente os parâmetros *equipment_id*, *location_id*, *place*, *cash_mode*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule*, *visit_schedule* e *enable_bluetooth* são considerados; os demais são ignorados.
 
 Não é permitido atualizar um planograma ativo, somente cadastrar um outro planograma pendente. Para tanto, ver Planogramas.
 
