@@ -1110,7 +1110,10 @@ id          id da instalação  sim
 Campos
 ------
 
-Nenhum.
+Opcionais
+^^^^^^^^^
+
+*restock_mode*: o modo do reabastecimento. Os valores possíveis são *restock_and_cash_collect* (realiza uma coleta além do reabastecimento) ou *restock_only* (realiza somente o reabastecimento). Qualquer outro valor diferente desses é ignorado e é feito o que está configurado no atributo *restock_mode* da instalação (botão de visita). O mesmo acontece caso o campo não seja passado. Caso o atributo *restock_mode* da instalação esteja configurado como *restock_only* e seja passado o valor *restock_and_cash_collect* neste campo, será realizado somente um reabastecimento, a coleta não será realizada.
 
 Retorno
 -------
@@ -1121,6 +1124,14 @@ status  descrição
 200     Reabastecimento criado com sucesso
 422     Não foi possível criar reabastecimento
 ======  ======================================
+
+Exemplo:
+
+::
+
+  {
+    "restock_mode": "restock_only"
+  }
 
 Resources aninhadas
 ===================
