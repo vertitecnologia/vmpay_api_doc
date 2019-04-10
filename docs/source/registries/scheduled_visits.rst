@@ -62,6 +62,8 @@ Cada elemento do array contém os seguintes campos:
 
   - **cash_collect**: se deve efetuar coleta na visita
 
+  - **only_visit**: se não é necessário reabastecimento ou coleta na visita
+
 Exemplo:
 
 ::
@@ -114,6 +116,26 @@ Exemplo:
           "cash_collect": true
         }
       ]
+    },
+    {
+      "id": 13062,
+      "created_at": "2017-11-12T15:33:18.000-02:00",
+      "updated_at": "2017-11-14T18:14:21.000-02:00",
+      "date": "2017-12-15",
+      "completed_at": "2017-11-12T15:56:25.000-02:00",
+      "vacant_amounts_required": true,
+      "checkpoints": [
+        {
+          "id": 84638,
+          "installation_id": 7690,
+          "only_visit": true
+        },
+        {
+          "id": 84639,
+          "installation_id": 7688,
+          "only_visit": true
+        }
+      ]
     }
   ]
 
@@ -162,7 +184,8 @@ Exemplo:
         "pick_list_scheduled": false,
         "pick_list_generated": false,
         "restock": false,
-        "cash_collect": true
+        "cash_collect": true,
+        "only_visit": false
       },
       {
         "id": 84639,
@@ -170,7 +193,8 @@ Exemplo:
         "pick_list_scheduled": false,
         "pick_list_generated": false,
         "restock": true,
-        "cash_collect": true
+        "cash_collect": true,
+        "only_visit": false
       },
       {
         "id": 84640,
@@ -178,8 +202,9 @@ Exemplo:
         "pick_list_scheduled": true,
         "pick_list_scheduled_at": "2018-12-19T12:00:00.000Z",
         "pick_list_generated": false,
-        "restock": true,
-        "cash_collect": false
+        "restock": false,
+        "cash_collect": false,
+        "only_visit": true
       }
     ]
   }
@@ -225,6 +250,9 @@ Request::
         "installation_id": 7688,
         "restock": true,
         "cash_collect": true
+      }, {
+        "installation_id": 7687,
+        "only_visit": true
       }]
     }
   }
@@ -267,6 +295,11 @@ Opcionais
   * *cash_collect*: Se deve efetuar a coleta na visita
 
     * Valores permitidos: *true* para efetuar a coleta ou *false* se não.
+
+  * *only_visit*: Se não é necessário reabastecimento ou coleta na visita
+
+    * Valores permitidos: *true* para ignorar reabastecimento e coleta na visita
+      ou *false* para levar em consideração os valores de reabastecimento e coleta
 
   * *pick_list_scheduled*: Se deve agendar a geração do pick list
 
@@ -315,13 +348,15 @@ Exemplo:
         "id": 84654,
         "installation_id": 7690,
         "restock": false,
-        "cash_collect": true
+        "cash_collect": true,
+        "only_visit": false
       },
       {
         "id": 84655,
         "installation_id": 7688,
         "restock": true,
-        "cash_collect": true
+        "cash_collect": true,
+        "only_visit": false
       }
     ]
   }
@@ -378,6 +413,9 @@ Exemplo atualização::
       }, {
         "id": 84654,
         "restock": false
+      }, {
+        "id": 84655,
+        "only_visit": true
       }]
     }
   }
@@ -438,13 +476,15 @@ Exemplo:
         "id": 84654,
         "installation_id": 7690,
         "restock": false,
-        "cash_collect": true
+        "cash_collect": true,
+        "only_visit": false
       },
       {
         "id": 84655,
         "installation_id": 7688,
         "restock": true,
-        "cash_collect": true
+        "cash_collect": true,
+        "only_visit": false
       }
     ]
   }
