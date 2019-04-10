@@ -1,2 +1,4 @@
 /docs/build
 .python-version
+.tool-versions
+.vscode
