@@ -39,6 +39,7 @@ Resources disponíveis
    info/machine_manufacturer
    info/machine_model
    info/machine_type
+   info/distribution_center
    info/eft_provider
    info/eft_authorizer
    info/eft_card_brand
