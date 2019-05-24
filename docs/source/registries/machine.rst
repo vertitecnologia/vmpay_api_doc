@@ -28,6 +28,7 @@ Exemplo:
       "machine_model_id": 82,
       "asset_number": "M010 - 0037",
       "external_id": null,
+      "distribution_center_id": 47,
       "installation": {
         "id": 1106,
         "location_id": 1391,
@@ -43,7 +44,8 @@ Exemplo:
       "id": 222,
       "machine_model_id": 75,
       "asset_number": "M003 - 0009",
-      "external_id": null
+      "external_id": null,
+      "distribution_center_id": 47
     }
   ]
 
@@ -81,6 +83,7 @@ Exemplo:
     "machine_model_id": 82,
     "asset_number": "M010 - 0037",
     "external_id": null,
+    "distribution_center_id": 47,
     "installation": {
       "id": 1106,
       "location_id": 1391,
@@ -224,6 +227,7 @@ Exemplo::
     "machine_model_id": 69,
     "asset_number": "998877",
     "external_id": null,
+    "distribution_center_id": 47,
     "installation": {
       "id": 1119,
       "location_id": 185,
