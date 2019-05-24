@@ -64,6 +64,12 @@ Cada elemento do array contém os seguintes campos:
 
   - **only_visit**: se não é necessário reabastecimento ou coleta na visita
 
+* **scheduled_visit_routes**: lista das rotas da visita; cada elemento contém:
+
+  - **id**: o id da rota da visita
+
+  - **route_id**: o id da `rota <route.html>`_
+
 Exemplo:
 
 ::
@@ -93,6 +99,12 @@ Exemplo:
           "restock": true,
           "cash_collect": false
         }
+      ],
+      "scheduled_visit_routes": [
+        {
+          "id": 16707,
+          "route_id": 377
+        }
       ]
     },
     {
@@ -115,6 +127,12 @@ Exemplo:
           "restock": true,
           "cash_collect": true
         }
+      ],
+      "scheduled_visit_routes": [
+        {
+          "id": 16707,
+          "route_id": 377
+        }
       ]
     },
     {
@@ -134,6 +152,12 @@ Exemplo:
           "id": 84639,
           "installation_id": 7688,
           "only_visit": true
+        }
+      ],
+      "scheduled_visit_routes": [
+        {
+          "id": 16707,
+          "route_id": 377
         }
       ]
     }
@@ -205,6 +229,12 @@ Exemplo:
         "restock": false,
         "cash_collect": false,
         "only_visit": true
+      }
+    ],
+    "scheduled_visit_routes": [
+      {
+        "id": 16707,
+        "route_id": 377
       }
     ]
   }
@@ -357,6 +387,12 @@ Exemplo:
         "restock": true,
         "cash_collect": true,
         "only_visit": false
+      }
+    ],
+    "scheduled_visit_routes": [
+      {
+        "id": 16707,
+        "route_id": 377
       }
     ]
   }
