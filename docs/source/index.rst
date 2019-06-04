@@ -55,3 +55,4 @@ Resources disponíveis
    reports/pick_list
    reports/cashless_transaction
    reports/vend
+   reports/visit
