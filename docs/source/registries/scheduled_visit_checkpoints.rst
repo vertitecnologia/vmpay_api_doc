@@ -62,9 +62,41 @@ campos:
 
   - **entered_vacant_amount**: saldo informado para o item no VMpay Visitor
 
-  - **returned_amounts**: um array com até 4 elementos contendo os valores
-    retornados na seguinte ordem: "Retirado: danificado", "Retirado: vencido",
-    "Sobra: troca de grade" e "Sobra: pick list".
+  - **returned_amounts**: lista de retornos do Visitor com os seguintes campos:
+
+    + **id**: o id do registro
+
+    + **original_value**: valor do registro antes da edição
+
+    + **value**: valor final após edição
+
+    + **edited**: se o registro foi editado ou não
+
+    + **code**: codigo do registro
+
+      * **damaged_item_return**
+      * **expired_item_return**
+      * **grid_replacement_leftover**
+      * **incorrect_grid_return**
+      * **item_not_shipped_return**
+      * **pick_list_leftover**
+      * **product_inversion_return**
+      * **relocated_machine_return**
+      * **removed_machine_return**
+      * **technical_problem_return**
+
+    + **description**: descrição do registro
+
+      * **Retorno Danificado**
+      * **Retorno Vencido**
+      * **Sobra Troca de Grade**
+      * **Retorno Grade Incorreta**
+      * **Retorno Item não enviado**
+      * **Sobra Pick list**
+      * **Retorno Inversão Produto**
+      * **Retorno Máquina Remanejada**
+      * **Retorno Máquina Retirada**
+      * **Retorno Problema Técnico**
 
 * **custom_values**: lista de campos customizados em que cada elemento contém os
   seguintes campos:
@@ -106,7 +138,16 @@ Exemplo:
         "capacity": 10.0,
         "expected_vacant_amount": 6.0,
         "entered_vacant_amount": 7.0,
-        "returned_amounts": [0.0, 0.0, 0.0, 4.0]
+        "returned_amounts": [
+          {
+            "id": 15197,
+            "original_value": 1.0,
+            "value": 2.0,
+            "edited": true,
+            "code": "relocated_machine_return",
+            "description": "Retorno Máquina Remanejada"
+          }
+        ]
       },
       {
         "planogram_item_id": 385103,
@@ -120,14 +161,40 @@ Exemplo:
         "capacity": 13.0,
         "expected_vacant_amount": 5.0,
         "entered_vacant_amount": 2.0,
-        "returned_amounts": [1.0]
+        "returned_amounts": [
+          {
+            "id": 15196,
+            "original_value": 4.0,
+            "value": 8.0,
+            "edited": true,
+            "code": "item_not_shipped_return",
+            "description": "Retorno Item não enviado"
+          }
+        ]
       },
       {
         "planogram_item_id": 385105,
         "capacity": 10.0,
         "expected_vacant_amount": 0.0,
         "entered_vacant_amount": 8.0,
-        "returned_amounts": [1.0, 1.0, 0.0, 1.0]
+        "returned_amounts": [
+          {
+            "id": 15194,
+            "original_value": 1.0,
+            "value": 2.0,
+            "edited": true,
+            "code": "incorrect_grid_return",
+            "description": "Retorno Grade Incorreta"
+          },
+          {
+            "id": 15195,
+            "original_value": 3.0,
+            "value": 6.0,
+            "edited": true,
+            "code": "product_inversion_return",
+            "description": "Retorno Inversão Produto"
+          }
+        ]
       }
     ],
     "custom_values": [
