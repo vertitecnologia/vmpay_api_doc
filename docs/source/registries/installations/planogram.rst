@@ -40,6 +40,7 @@ Exemplo::
       "due": "due_now",
       "started_at": "2015-11-04T11:12:02.000-02:00",
       "ended_at": "2015-11-12T15:41:52.000-02:00",
+      "details": "Planograma temporário",
       "items": [
         {
           "id": 93477,
@@ -140,6 +141,7 @@ Exemplo::
     "updated_at": "2016-01-26T17:36:44.000-02:00",
     "due": "now",
     "started_at": "2016-01-26T17:36:44.000-02:00",
+    "details": "Planograma temporário",
     "items": [
       {
         "id": 86717,
@@ -242,6 +244,7 @@ Request::
 
   {
     "planogram": {
+      "details": "Planograma para testes de canaleta",
       "items_attributes": [
         {
           "type": "Coil",
@@ -351,7 +354,9 @@ Obrigatórios
 Opcionais
 ^^^^^^^^^
 
-Nenhum.
+* *planogram*
+
+  - *details*: Texto explicativo relacionado ao planograma
 
 Retorno
 -------
@@ -371,6 +376,7 @@ Exemplo::
     "due": "due_next_restock",
     "started_at": null,
     "ended_at": null,
+    "details": "Planograma para testes de canaleta",
     "items": [
       {
         "id": 113846,
@@ -601,6 +607,7 @@ Request::
 
   {
     "planogram": {
+      "details": "Planograma para testes de canaleta",
       "items_attributes": [
         {
           "id": 113846,
@@ -673,7 +680,9 @@ Obrigatórios
 Opcionais
 ^^^^^^^^^
 
-Nenhum.
+* *planogram*
+
+  - *details*: Texto explicativo relacionado ao planograma
 
 Retorno
 -------
@@ -695,6 +704,7 @@ Exemplo:
     "due": "due_next_restock",
     "started_at": null,
     "ended_at": null,
+    "details": "Planograma para testes de canaleta",
     "items": [
       {
         "id": 113846,
