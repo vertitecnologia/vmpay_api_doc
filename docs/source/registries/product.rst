@@ -32,6 +32,7 @@ Exemplo::
       "upc_code": "91",
       "barcode": "1234567890",
       "external_id": null,
+      "weight": null,
       "additional_barcodes": [],
       "url": "http://localhost:4000/api/v1/products/163"
     },
@@ -46,6 +47,7 @@ Exemplo::
       "upc_code": "110",
       "barcode": "0987654321",
       "external_id": null,
+      "weight": null,
       "additional_barcodes": [
         { "id": 123, "value": "10191817" },
         { "id": 321, "value": "16151413" }
@@ -63,6 +65,7 @@ Exemplo::
       "upc_code": "93",
       "barcode": null,
       "external_id": null,
+      "weight": null,
       "additional_barcodes": [],
       "packing": {
         "id":15,
@@ -111,6 +114,7 @@ Exemplo::
     "upc_code": "91",
     "barcode": "1234567890",
     "external_id": null,
+    "weight": null,
     "additional_barcodes": [],
     "url": "http://localhost:4000/api/v1/products/163"
   }
@@ -142,6 +146,7 @@ Request::
       "upc_code": 111,
       "barcode": "1234567891",
       "external_id": "123qwe",
+      "weight": 123,
       "additional_barcodes_attributes": [
         { "value": "10191817" },
         { "value": "16151413" }
@@ -172,6 +177,7 @@ Opcionais
   * *upc_code*: código do produto.
   * *barcode*: código de barras do produto, a ser utilizado no micro market.
   * *external_id*: identificador externo do produto.
+  * *weight*: peso do produto (em gramas)
   * *additional_barcodes_attributes*: Array com códigos de barras adicionais.
 
     * *value*: o código de barras.
@@ -204,6 +210,7 @@ Exemplo::
     "upc_code": "111",
     "barcode": "1234567891",
     "external_id": "123qwe",
+    "weight": 123,
     "additional_barcodes": [
       { "id": 123, "value": "10191817" },
       { "id": 321, "value": "16151413" }
@@ -316,6 +323,7 @@ Exemplo::
     "upc_code": "111",
     "barcode": "1234567891",
     "external_id": null,
+    "weight": null,
     "additional_barcodes": [
       { "id": 123, "value": "10191817" },
       { "id": 321, "value": "16151413" }
