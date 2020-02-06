@@ -46,7 +46,8 @@ Exemplo::
       "distribution_center_id": 1,
       "machine_id": 49
       "pending": false,
-      "url": "http://vmpay.vertitecnologia.com.br/api/v1/machines/49/installations/857/pick_lists/4164"
+      "url": "http://vmpay.vertitecnologia.com.br/api/v1/machines/49/installations/857/pick_lists/4164",
+      "notes": "some extra info"
     },
     {
       "id": 4302,
@@ -58,7 +59,8 @@ Exemplo::
       "distribution_center_id": 1,
       "machine_id": 49
       "pending": false,
-      "url": "http://vmpay.vertitecnologia.com.br/api/v1/machines/49/installations/857/pick_lists/4302"
+      "url": "http://vmpay.vertitecnologia.com.br/api/v1/machines/49/installations/857/pick_lists/4302",
+      "notes": null
     }
   ]
 
@@ -119,6 +121,7 @@ Exemplo::
     "group_id": 1,
     "distribution_center_id": 1,
     "pending": false,
+    "notes": "some extra info",
     "items": [
       {
         "id": 167188,
@@ -233,6 +236,8 @@ Opcionais
 
 * *pick_list*
 
+  * *notes*: observações do pick list.
+
   * *items_attributes*: um array contendo os items do pick list.
 
     * *packing_quantity*: a quantidade de packings,associado ao item, a ser reabastecida.
@@ -256,6 +261,7 @@ Exemplo::
     "updated_at": "2016-02-16T15:22:26.519-02:00",
     "planogram_id": 2563,
     "pending": true,
+    "notes": null,
     "items": [
       {
         "id": 191350,
@@ -353,6 +359,8 @@ Opcionais
 
 * *pick_list*
 
+  * *notes*: observações do pick list.
+
   * *items_attributes*: um array contendo os items do pick list.
 
     * *packing_quantity*: o número de packings, a ser reabastecido.
@@ -378,6 +386,7 @@ Exemplo:
     "updated_at": "2016-02-16T15:22:26.000-02:00",
     "planogram_id": 2563,
     "pending": true,
+    "notes": null,
     "items": [
       {
         "id": 191350,
