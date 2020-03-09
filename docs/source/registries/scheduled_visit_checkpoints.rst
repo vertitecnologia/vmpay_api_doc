@@ -51,6 +51,8 @@ campos:
 
 * **scheduled_at**: a data em que o agendamento foi efetuado
 
+* **synched_by**: identificação do smartphone usado para sincronizar com o VMpay
+
 * **inventories**: lista de inventários em que cada elemento contém os seguintes
   campos:
 
@@ -132,6 +134,7 @@ Exemplo:
     "pick_list_id": 63089,
     "synched_at": "2016-12-22T08:05:33.000-02:00",
     "scheduled_at": "2016-12-21T10:16:01.000-02:00",
+    "synched_by": "VMVISITOR - JOSÉ",
     "inventories": [
       {
         "planogram_item_id": 385102,
