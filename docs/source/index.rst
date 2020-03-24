@@ -56,3 +56,10 @@ Resources disponíveis
    reports/cashless_transaction
    reports/vend
    reports/visit
+
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Inventário
+
+   inventory/storable
