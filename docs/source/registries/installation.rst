@@ -59,6 +59,7 @@ Exemplo:
       "operation_status": "green",
       "states": ["hatched"],
       "route_ids": [10, 68, 123],
+      "last_communication": "26/09/2018 19:13",
       "connection": {
         "kind": "GPRS",
         "label": "wwan0",
@@ -103,7 +104,8 @@ Exemplo:
       "issues_invoice": false,
       "operation_status": "yellow",
       "states": ["audit_failure", "hatched"],
-      "route_ids": [10, 13]
+      "route_ids": [10, 13],
+      "last_communication": "15/06/2018 23:18"
     },
     {
       "id": 138,
@@ -129,7 +131,8 @@ Exemplo:
       "issues_invoice": true,
       "operation_status": "red",
       "states": ["extended_power_loss", "hatched"],
-      "route_ids": [23]
+      "route_ids": [23],
+      "last_communication": "12/09/2018 13:13"
     }
   ]
 
@@ -268,6 +271,7 @@ Segue um exemplo de retorno:
       "operation_status": "red",
       "states": ["extended_power_loss", "hatched"],
       "route_ids": [10, 13],
+      "last_communication": "12/09/2018 13:13",
       "pending_planogram": null,
       "current_planogram": {
         "id": 189976,
@@ -672,6 +676,7 @@ Exemplo:
     "operation_status": "grey",
     "states": [],
     "route_ids": [],
+    "last_communication": "12/09/2018 13:13",
     "pending_planogram": null,
     "current_planogram": {
       "id": 2950,
@@ -983,6 +988,7 @@ Exemplo:
     "operation_status": "green",
     "states": ["hatched"],
     "route_ids": [23],
+    "last_communication": "12/09/2018 13:13",
     "pending_planogram": null,
     "current_planogram": {
       "id": 2960,
