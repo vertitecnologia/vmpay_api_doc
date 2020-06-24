@@ -38,8 +38,8 @@ Exemplo:
        "inventories": [
          {
            "distribution_center_id": 1,
-           "total_quantity": -2903.0,
-           "committed_quantity": 39.0
+           "total_quantity": 576.0,
+           "committed_quantity": 0.0
          }
        ]
      },
@@ -58,8 +58,8 @@ Exemplo:
        "inventories": [
          {
            "distribution_center_id": 1,
-           "total_quantity": -3232.0,
-           "committed_quantity": 23.0
+           "total_quantity": 236.0,
+           "committed_quantity": 0.0
          }
        ]
      }
@@ -109,11 +109,31 @@ Exemplo:
     "inventories": [
       {
         "distribution_center_id": 1,
-        "total_quantity": -3232.0,
-        "committed_quantity": 23.0
+        "total_quantity": 236.0,
+        "committed_quantity": 0.0
       }
     ]
   }
+
+Campos
+------
+
+* *type*: tipo do estoque
+* *manufacturer_id*: id do fabricante
+* *category_id*: id da categoria
+* *name*: nome do produto
+* *upc_code*: código UPC do produto
+* *barcode*: código de barras do produto
+* *external_id*: id externo
+* *inventories*: lista de inventários relacionados ao estoque
+
+  * *distribution_center_id*: id do centro de distribuição
+  * *total_quantity*: saldo do produto
+  * *committed_quantity*: quantidade reservada
+
+    * Para o cálculo do saldo disponível, deve-se considerar
+      (total_quantity - committed_quantity)
+
 
 Erros
 -----
@@ -151,6 +171,16 @@ Request::
     }
   }
 
+Campos
+------
+
+* *storable*
+
+  * *inventories*: lista dos inventários relacionados ao estoque
+
+    * *distribution_center_id*: id do centro de distribuição.
+    * *quantity_delta*: diferença desejada para alteração do saldo, positiva
+      ou negativa.
 
 Retorno
 -------
