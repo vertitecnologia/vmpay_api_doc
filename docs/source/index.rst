@@ -30,6 +30,7 @@ Resources disponíveis
    registries/route
    registries/scheduled_visits
    registries/scheduled_visit_checkpoints
+   registries/unit
 
 .. toctree::
    :maxdepth: 1
