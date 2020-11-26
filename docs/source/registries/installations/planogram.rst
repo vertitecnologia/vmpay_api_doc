@@ -62,6 +62,7 @@ Exemplo::
           ],
           "children": null,
           "current_balance": 6,
+          "status": "active",
           "good": {
             "id": 163,
             "name": "Ruffles 50 g",
@@ -91,6 +92,7 @@ Exemplo::
           ],
           "children": null,
           "current_balance": 5,
+          "status": "active",
           "good": {
             "id": 1449,
             "name": "Rosquiletas",
@@ -153,7 +155,8 @@ Exemplo::
         "alert_level": 4,
         "desired_price": 2.5,
         "logical_locator": 1,
-        "current_balance": 11.0
+        "current_balance": 11.0,
+        "status": "active",
       },
       {
         "id": 86718,
@@ -165,7 +168,8 @@ Exemplo::
         "alert_level": 2,
         "desired_price": 2.3,
         "logical_locator": 2,
-        "current_balance": 8.0
+        "current_balance": 8.0,
+        "status": "active",
       },
       {
         "id": 86719,
@@ -174,7 +178,8 @@ Exemplo::
         "good_id": 23,
         "desired_price": 4.0,
         "logical_locator": 3,
-        "children": { "1": 2, "2": 1 }
+        "children": { "1": 2, "2": 1 },
+        "status": "active",
       },
       {
         "id": 86720,
@@ -184,7 +189,8 @@ Exemplo::
         "par_level": 2000,
         "alert_level": 200,
         "logical_locator": 4,
-        "current_balance": 983.3
+        "current_balance": 983.3,
+        "status": "active",
       },
       {
         "id": 86721,
@@ -194,7 +200,8 @@ Exemplo::
         "par_level": 3000,
         "alert_level": 300,
         "logical_locator": 5,
-        "current_balance": 1975.4
+        "current_balance": 1975.4,
+        "status": "active",
       },
       {
         "id": 86722,
@@ -203,7 +210,8 @@ Exemplo::
         "name": "5",
         "desired_price": 3.0,
         "logical_locator": 6,
-        "children": { "4": 20, "5": 15 }
+        "children": { "4": 20, "5": 15 },
+        "status": "active",
       }
     ]
   }
@@ -255,8 +263,8 @@ Request::
           "alert_level": 4,
           "desired_price": 2.5,
           "logical_locator": 1
-          },
-          {
+        },
+        {
           "type": "Coil",
           "name": "3,4",
           "good_id": 11,
@@ -265,40 +273,40 @@ Request::
           "alert_level": 4,
           "desired_price": 2.5,
           "logical_locator": 2
-          },
-          {
+        },
+        {
           "type": "Canister",
           "good_id": 12,
           "capacity": 3000,
           "par_level": 3000,
           "alert_level": 500,
           "logical_locator": 3
-          },
-          {
+        },
+        {
           "type": "Canister",
           "good_id": 13,
           "capacity": 300,
           "par_level": 300,
           "alert_level": 50,
           "logical_locator": 4
-          },
-          {
+        },
+        {
           "type": "VirtualCanister",
           "name": "5",
           "good_id": 15,
           "desired_price": 3.5,
           "logical_locator": 5,
           "children": { "3": 21, "4": 1 }
-          },
-          {
+        },
+        {
           "type": "VirtualCoil",
           "name": "6",
           "good_id": 23,
           "desired_price": 6.0,
           "logical_locator": 6,
           "children": { "1": 2, "2": 1 }
-          }
-          ]
+        }
+      ]
     }
   }
 
@@ -399,6 +407,7 @@ Exemplo::
         ],
         "children": null,
         "current_balance": 0,
+        "status": "active",
         "good": {
           "id": 10,
           "name": "Amendoin",
@@ -429,6 +438,7 @@ Exemplo::
         ],
         "children": null,
         "current_balance": 0,
+        "status": "active",
         "good": {
           "id": 11,
           "name": "Coca Cola",
@@ -456,6 +466,7 @@ Exemplo::
         "physical_locators":[],
         "children":null,
         "current_balance":0,
+        "status": "active",
         "good":{
           "id":12,
           "name":"Chocolate Solúvel com Leite 1kg",
@@ -483,6 +494,7 @@ Exemplo::
         "physical_locators":[],
         "children":null,
         "current_balance":0,
+        "status": "active",
         "good":{
           "id":13,
           "name":"Copo Plástico 160 ml",
@@ -515,6 +527,7 @@ Exemplo::
           "4": "1.00"
         },
         "current_balance": 0,
+        "status": "active",
         "good": {
           "id": 15,
           "name": "Dose Chocolate Quente",
@@ -546,6 +559,7 @@ Exemplo::
           "1": "2.00",
           "2": "1.00"
         },
+        "status": "active",
         "good": {
           "id": 23,
           "name": "2x Amendoins + 1x Coca Cola",
@@ -618,7 +632,8 @@ Request::
           "par_level": 25,
           "alert_level": 5,
           "desired_price": 2.5,
-          "logical_locator": 1
+          "logical_locator": 1,
+          "status": "active"
         }
       ]
     }
@@ -727,6 +742,7 @@ Exemplo:
         ],
         "children": null,
         "current_balance": 0,
+        "status": "active",
         "good": {
           "id": 10,
           "name": "Amendoin",
@@ -756,6 +772,7 @@ Exemplo:
         ],
         "children": null,
         "current_balance": 0,
+        "status": "active",
         "good": {
           "id": 12,
           "name": "Twix",
@@ -787,6 +804,7 @@ Exemplo:
           "1": 2,
           "2": 1
         },
+        "status": "active",
         "good": {
           "id": 23,
           "name": "Camiseta Acqua tamanho G",
