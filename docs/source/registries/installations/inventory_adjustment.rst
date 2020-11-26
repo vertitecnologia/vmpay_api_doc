@@ -62,7 +62,12 @@ Exemplo::
               "id": 10324,
               "created_at": "2017-02-08T13:12:26.000Z",
               "name": "PRODUTO 1",
-              "unit": "gram"
+              "unit": {
+                "id": 1,
+                "fractionable": false,
+                "name": "unit",
+                "conversion_factor": 1
+              }
             }
           }
         },
@@ -86,7 +91,12 @@ Exemplo::
               "id": 10322,
               "created_at": "2017-02-08T13:11:53.000Z",
               "name": "PRODUTO 2",
-              "unit": "gram"
+              "unit": {
+                "id": 1,
+                "fractionable": false,
+                "name": "unit",
+                "conversion_factor": 1
+              }
             }
           }
         }
@@ -122,7 +132,12 @@ Exemplo::
               "created_at": "2017-02-08T12:31:44.000Z",
               "updated_at": "2017-02-13T16:23:30.000Z",
               "name": "PRODUTO 3",
-              "unit": "gram"
+              "unit": {
+                "id": 1,
+                "fractionable": false,
+                "name": "unit",
+                "conversion_factor": 1
+              }
             }
           }
         }
@@ -191,7 +206,12 @@ Exemplo::
             "created_at": "2017-02-08T12:31:44.000Z",
             "updated_at": "2017-02-13T16:23:30.000Z",
             "name": "PRODUTO 3",
-            "unit": "gram"
+            "unit": {
+              "id": 1,
+              "fractionable": false,
+              "name": "unit",
+              "conversion_factor": 1
+            }
           }
         }
       }
@@ -360,7 +380,12 @@ Exemplo::
             "created_at": "2017-02-08T12:31:44.000Z",
             "updated_at": "2017-02-13T16:23:30.000Z",
             "name": "PRODUTO 3",
-            "unit": "gram"
+            "unit": {
+              "id": 1,
+              "fractionable": false,
+              "name": "unit",
+              "conversion_factor": 1
+            }
           }
         }
       }

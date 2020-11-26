@@ -27,6 +27,7 @@ Resources disponíveis
    registries/packing
    registries/product
    registries/compound_product
+   registries/fractionable_product
    registries/route
    registries/scheduled_visits
    registries/scheduled_visit_checkpoints
