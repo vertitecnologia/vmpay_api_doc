@@ -53,9 +53,13 @@ campos:
 * **synched_at**: a data em que o checkpoint foi sincronizado com o VMpay
   Visitor
 
+* **pending_inventory_adjustment**: se o ajuste de inventário está pendente
+
 * **scheduled_at**: a data em que o agendamento foi efetuado
 
 * **synched_by**: identificação do smartphone usado para sincronizar com o VMpay
+
+* **edited_by**: identificação do usuário que editou a agenda
 
 * **inventories**: lista de inventários em que cada elemento contém os seguintes
   campos:
@@ -146,8 +150,10 @@ Exemplo:
     "planogram_id": 11204,
     "pick_list_id": 63089,
     "synched_at": "2016-12-22T08:05:33.000-02:00",
+    "pending_inventory_adjustment": true,
     "scheduled_at": "2016-12-21T10:16:01.000-02:00",
     "synched_by": "VMVISITOR - JOSÉ",
+    "edited_by": "Claudio da Silva",
     "inventories": [
       {
         "planogram_item_id": 385102,

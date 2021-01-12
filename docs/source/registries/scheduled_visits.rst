@@ -62,6 +62,8 @@ Cada elemento do array contém os seguintes campos:
 
   - **only_visit**: se não é necessário reabastecimento ou coleta na visita
 
+  - **pending_inventory_adjustment**: se o ajuste de inventário está pendente
+
 * **scheduled_visit_routes**: lista das rotas da visita; cada elemento contém:
 
   - **id**: o id da rota da visita
@@ -90,7 +92,8 @@ Exemplo:
           "pick_list_generated": false,
           "restock": false,
           "cash_collect": false,
-          "only_visit": true
+          "only_visit": true,
+          "pending_inventory_adjustment": false
         },
         {
           "id": 84640,
@@ -100,7 +103,8 @@ Exemplo:
           "pick_list_generated": true,
           "restock": true,
           "cash_collect": false,
-          "only_visit": false
+          "only_visit": false,
+          "pending_inventory_adjustment": true
         }
       ],
       "scheduled_visit_routes": [
@@ -126,7 +130,8 @@ Exemplo:
           "pick_list_generated": false,
           "restock": false,
           "cash_collect": true,
-          "only_visit": false
+          "only_visit": false,
+          "pending_inventory_adjustment": false
         },
         {
           "id": 84639,
@@ -136,7 +141,8 @@ Exemplo:
           "pick_list_generated": false,
           "restock": true,
           "cash_collect": true,
-          "only_visit": false
+          "only_visit": false,
+          "pending_inventory_adjustment": true
         }
       ],
       "scheduled_visit_routes": [
@@ -162,7 +168,8 @@ Exemplo:
           "pick_list_generated": false,
           "restock": false,
           "cash_collect": false,
-          "only_visit": true
+          "only_visit": true,
+          "pending_inventory_adjustment": false
         },
         {
           "id": 84639,
@@ -172,7 +179,8 @@ Exemplo:
           "pick_list_generated": false,
           "restock": false,
           "cash_collect": false,
-          "only_visit": true
+          "only_visit": true,
+          "pending_inventory_adjustment": true
         }
       ],
       "scheduled_visit_routes": [
@@ -231,7 +239,8 @@ Exemplo:
         "pick_list_generated": false,
         "restock": false,
         "cash_collect": true,
-        "only_visit": false
+        "only_visit": false,
+        "pending_inventory_adjustment": true
       },
       {
         "id": 84639,
@@ -241,7 +250,8 @@ Exemplo:
         "pick_list_generated": false,
         "restock": true,
         "cash_collect": true,
-        "only_visit": false
+        "only_visit": false,
+        "pending_inventory_adjustment": false
       },
       {
         "id": 84640,
@@ -251,7 +261,8 @@ Exemplo:
         "pick_list_generated": false,
         "restock": false,
         "cash_collect": false,
-        "only_visit": true
+        "only_visit": true,
+        "pending_inventory_adjustment": true
       }
     ],
     "scheduled_visit_routes": [
@@ -397,7 +408,8 @@ Exemplo:
         "pick_list_generated": true,
         "restock": true,
         "cash_collect": false,
-        "only_visit": false
+        "only_visit": false,
+        "pending_inventory_adjustment": true
       }
       {
         "id": 84654,
@@ -407,7 +419,8 @@ Exemplo:
         "pick_list_generated": false,
         "restock": false,
         "cash_collect": true,
-        "only_visit": false
+        "only_visit": false,
+        "pending_inventory_adjustment": false
       },
       {
         "id": 84655,
@@ -417,7 +430,8 @@ Exemplo:
         "pick_list_generated": false,
         "restock": true,
         "cash_collect": true,
-        "only_visit": false
+        "only_visit": false,
+        "pending_inventory_adjustment": true
       }
     ],
     "scheduled_visit_routes": [
@@ -547,7 +561,8 @@ Exemplo:
         "pick_list_generated": false,
         "restock": false,
         "cash_collect": true,
-        "only_visit": false
+        "only_visit": false,
+        "pending_inventory_adjustment": false
       },
       {
         "id": 84655,
@@ -557,7 +572,8 @@ Exemplo:
         "pick_list_generated": false,
         "restock": true,
         "cash_collect": true,
-        "only_visit": false
+        "only_visit": false,
+        "pending_inventory_adjustment": true
       }
     ]
   }
