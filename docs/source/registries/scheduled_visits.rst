@@ -54,8 +54,6 @@ Cada elemento do array contém os seguintes campos:
 
   - **pick_list_scheduled_at**: data de agendamento da geração de pick list, no formato `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
 
-  - **pick_list_scheduled_minutes**: minutos do agendamento da geração de pick list
-
   - **pick_list_generated**: se o pick list já foi gerado ou não
 
   - **restock**: se deve efetuar reabastecimento na visita
@@ -87,8 +85,12 @@ Exemplo:
         {
           "id": 84652,
           "installation_id": 1982,
+          "pick_list_scheduled": false,
+          "pick_list_scheduled_at": null,
+          "pick_list_generated": false,
           "restock": false,
-          "cash_collect": false
+          "cash_collect": false,
+          "only_visit": true
         },
         {
           "id": 84640,
@@ -97,7 +99,8 @@ Exemplo:
           "pick_list_scheduled_at": "2017-11-24T12:00:00.000Z",
           "pick_list_generated": true,
           "restock": true,
-          "cash_collect": false
+          "cash_collect": false,
+          "only_visit": false
         }
       ],
       "scheduled_visit_routes": [
@@ -118,14 +121,22 @@ Exemplo:
         {
           "id": 84638,
           "installation_id": 7690,
+          "pick_list_scheduled": false,
+          "pick_list_scheduled_at": null,
+          "pick_list_generated": false,
           "restock": false,
-          "cash_collect": true
+          "cash_collect": true,
+          "only_visit": false
         },
         {
           "id": 84639,
           "installation_id": 7688,
+          "pick_list_scheduled": false,
+          "pick_list_scheduled_at": null,
+          "pick_list_generated": false,
           "restock": true,
-          "cash_collect": true
+          "cash_collect": true,
+          "only_visit": false
         }
       ],
       "scheduled_visit_routes": [
@@ -146,11 +157,21 @@ Exemplo:
         {
           "id": 84638,
           "installation_id": 7690,
+          "pick_list_scheduled": false,
+          "pick_list_scheduled_at": null,
+          "pick_list_generated": false,
+          "restock": false,
+          "cash_collect": false,
           "only_visit": true
         },
         {
           "id": 84639,
           "installation_id": 7688,
+          "pick_list_scheduled": false,
+          "pick_list_scheduled_at": null,
+          "pick_list_generated": false,
+          "restock": false,
+          "cash_collect": false,
           "only_visit": true
         }
       ],
@@ -206,6 +227,7 @@ Exemplo:
         "id": 84638,
         "installation_id": 7690,
         "pick_list_scheduled": false,
+        "pick_list_scheduled_at": null,
         "pick_list_generated": false,
         "restock": false,
         "cash_collect": true,
@@ -215,6 +237,7 @@ Exemplo:
         "id": 84639,
         "installation_id": 7688,
         "pick_list_scheduled": false,
+        "pick_list_scheduled_at": null,
         "pick_list_generated": false,
         "restock": true,
         "cash_collect": true,
@@ -369,14 +392,19 @@ Exemplo:
       {
         "id": 84653,
         "installation_id": 7687,
+        "pick_list_scheduled": true,
+        "pick_list_scheduled_at": "2017-12-18T10:15:00.000Z",
+        "pick_list_generated": true,
         "restock": true,
         "cash_collect": false,
-        "pick_list_scheduled": true,
-        "pick_list_scheduled_at": "2017-12-18T10:15:00.000Z"
+        "only_visit": false
       }
       {
         "id": 84654,
         "installation_id": 7690,
+        "pick_list_scheduled": false,
+        "pick_list_scheduled_at": null,
+        "pick_list_generated": false,
         "restock": false,
         "cash_collect": true,
         "only_visit": false
@@ -384,6 +412,9 @@ Exemplo:
       {
         "id": 84655,
         "installation_id": 7688,
+        "pick_list_scheduled": false,
+        "pick_list_scheduled_at": null,
+        "pick_list_generated": false,
         "restock": true,
         "cash_collect": true,
         "only_visit": false
@@ -511,6 +542,9 @@ Exemplo:
       {
         "id": 84654,
         "installation_id": 7690,
+        "pick_list_scheduled": false,
+        "pick_list_scheduled_at": null,
+        "pick_list_generated": false,
         "restock": false,
         "cash_collect": true,
         "only_visit": false
@@ -518,6 +552,9 @@ Exemplo:
       {
         "id": 84655,
         "installation_id": 7688,
+        "pick_list_scheduled": false,
+        "pick_list_scheduled_at": null,
+        "pick_list_generated": false,
         "restock": true,
         "cash_collect": true,
         "only_visit": false

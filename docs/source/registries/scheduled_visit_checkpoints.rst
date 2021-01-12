@@ -34,6 +34,10 @@ campos:
 
 * **restock**: se é um reabastecimento
 
+* **cash_collect**: se é uma coleta
+
+* **only_visit**: se não é nem um reabastecimento nem uma coleta, apenas uma visita
+
 * **finished**: se está finalizado
 
 * **finished_at**: a data em que o checkpoint foi finalizado
@@ -79,26 +83,32 @@ campos:
       * **damaged_item_return**
       * **expired_item_return**
       * **grid_replacement_leftover**
-      * **incorrect_grid_return**
-      * **item_not_shipped_return**
       * **pick_list_leftover**
-      * **product_inversion_return**
+      * **technical_problem_return**
+      * **incorrect_grid_return**
       * **relocated_machine_return**
       * **removed_machine_return**
-      * **technical_problem_return**
+      * **product_inversion_return**
+      * **item_not_shipped_return**
+      * **quantity_leftover**
+      * **par_level_reduction**
+      * **about_to_expire**
 
     + **description**: descrição do registro
 
       * **Retorno Danificado**
       * **Retorno Vencido**
-      * **Sobra Troca de Grade**
+      * **Retorno Troca de Grade**
+      * **Retorno Pick list**
+      * **Retorno Problema Técnico**
       * **Retorno Grade Incorreta**
-      * **Retorno Item não enviado**
-      * **Sobra Pick list**
-      * **Retorno Inversão Produto**
       * **Retorno Máquina Remanejada**
       * **Retorno Máquina Retirada**
-      * **Retorno Problema Técnico**
+      * **Retorno Inversão Produto**
+      * **Retorno Item não enviado**
+      * **Retorno Excesso**
+      * **Retorno Redução de Nível de par**
+      * **Retorno A Vencer**
 
 * **custom_values**: lista de campos customizados em que cada elemento contém os
   seguintes campos:
@@ -109,11 +119,13 @@ campos:
 
     + **label**: rótulo do campo
 
-    + **field_type**: tipo do campo
-
     + **required**: se o campo é obrigatório
 
-  - **field_value**: valor preenchido no VMpay Visitor
+    + **field_type**: tipo do campo
+
+  - **field_value**:
+
+    + **value**: valor preenchido no VMpay Visitor
 
 Exemplo:
 
@@ -126,6 +138,7 @@ Exemplo:
     "updated_at": "2016-12-21T10:16:01.000-02:00",
     "restock": true,
     "cash_collect": false,
+    "only_visit": false,
     "finished": true,
     "finished_at": "2016-12-21T16:39:20.000-02:00",
     "reopened_at": null,
