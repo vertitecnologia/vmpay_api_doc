@@ -46,6 +46,7 @@ Resources disponíveis
    info/eft_authorizer
    info/eft_card_brand
    info/eft_card_type
+   info/payment_authorizers
 
 .. toctree::
    :maxdepth: 1

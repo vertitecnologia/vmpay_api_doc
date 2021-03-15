@@ -242,6 +242,8 @@ status  descrição
     * *mac*: Endereço mac da interface
     * *status*: Estado da interface (active ou inactive)
 
+* O campo *payment_authorizer_ids* informa quais os autorizadores de QRcode que estão habilitados para o operador
+
 Segue um exemplo de retorno:
 
 ::
@@ -272,6 +274,7 @@ Segue um exemplo de retorno:
       "states": ["extended_power_loss", "hatched"],
       "route_ids": [10, 13],
       "last_communication": "12/09/2018 13:13",
+      "payment_authorizer_ids": [1, 2],
       "pending_planogram": null,
       "current_planogram": {
         "id": 189976,
@@ -477,6 +480,7 @@ Request::
         "enable_bluetooth": true,
         "enable_contactless": false,
         "issues_invoice": false,
+        "payment_authorizer_ids": [1, 2],
         "planograms_attributes": [
           {
             "items_attributes": [
@@ -638,6 +642,9 @@ Opcionais
 
     * Valor será ignorado a menos que o operador tenha suporte à emissão de NFCe.
 
+  * *payment_authorizer_ids*: Autorizadores QRCode
+
+
 Retorno
 -------
 
@@ -677,6 +684,7 @@ Exemplo:
     "states": [],
     "route_ids": [],
     "last_communication": "12/09/2018 13:13",
+    "payment_authorizer_ids": [],
     "pending_planogram": null,
     "current_planogram": {
       "id": 2950,
@@ -817,7 +825,7 @@ Exemplo:
           "physical_locators": [
             "5"
           ],
-          "children": "children": {
+          "children": {
             "3": "21.00",
             "4": "1.00"
           },
@@ -946,7 +954,7 @@ Campos
 
 Ao menos um campo interno a *installation* deve ser passado.
 
-Somente os parâmetros *equipment_id*, *location_id*, *place*, *cash_mode*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule*, *visit_schedule*, *enable_bluetooth*, *enable_contactless* e *issues_invoice* são considerados; os demais são ignorados.
+Somente os parâmetros *equipment_id*, *location_id*, *place*, *cash_mode*, *restock_mode*, *restock_strategy*, *notifications_enabled*, *audit_enabled*, *enable_audit_schedule*, *audit_schedule*, *visit_schedule*, *enable_bluetooth*, *enable_contactless*, *issues_invoice* e *payment_authorizer_ids* são considerados; os demais são ignorados.
 
 Não é permitido atualizar um planograma ativo, somente cadastrar um outro planograma pendente. Para tanto, ver Planogramas.
 
@@ -989,6 +997,7 @@ Exemplo:
     "states": ["hatched"],
     "route_ids": [23],
     "last_communication": "12/09/2018 13:13",
+    "payment_authorizer_ids": [],
     "pending_planogram": null,
     "current_planogram": {
       "id": 2960,
