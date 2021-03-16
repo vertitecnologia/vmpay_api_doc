@@ -31,6 +31,7 @@ Resources disponíveis
    registries/route
    registries/scheduled_visits
    registries/scheduled_visit_checkpoints
+   registries/tax_operation
    registries/unit
 
 .. toctree::
