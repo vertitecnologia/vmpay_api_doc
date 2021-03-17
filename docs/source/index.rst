@@ -56,6 +56,7 @@ Resources disponíveis
    reports/alert
    reports/device_config
    reports/session
+   reports/invoice
    reports/pick_list
    reports/cashless_transaction
    reports/vend
