@@ -33,8 +33,22 @@ Exemplo::
       "barcode": "1234567890",
       "external_id": null,
       "weight": null,
+      "vendible_balance": -6.0,
       "additional_barcodes": [],
-      "url": "http://localhost:4000/api/v1/products/163"
+      "ncm_code": "21069090",
+      "cest_code": "1234567",
+      "tax_operation": {
+        "id": 78,
+        "name": "CFOP: 5102; CSOSN: 102"
+      },
+      "url": "http://localhost:4000/api/v1/products/163",
+      "inventories": [
+        {
+          "distribution_center_id": 1,
+          "total_quantity": -16.0,
+          "committed_quantity": 0.0
+        }
+      ]
     },
     {
       "id": 164,
@@ -48,11 +62,13 @@ Exemplo::
       "barcode": "0987654321",
       "external_id": null,
       "weight": null,
+      "vendible_balance": -6.0,
       "additional_barcodes": [
         { "id": 123, "value": "10191817" },
         { "id": 321, "value": "16151413" }
       ],
-      "url": "http://localhost:4000/api/v1/products/164"
+      "url": "http://localhost:4000/api/v1/products/164",
+      "inventories": []
     },
     {
       "id": 165,
@@ -66,13 +82,21 @@ Exemplo::
       "barcode": null,
       "external_id": null,
       "weight": null,
+      "vendible_balance": -6.0,
       "additional_barcodes": [],
       "packing": {
         "id":15,
         "name": "Caixa com 10 unidades",
         "quantity":10
       },
-      "url": "http://localhost:4000/api/v1/products/165"
+      "ncm_code": "21069090",
+      "cest_code": "1234567",
+      "tax_operation": {
+        "id": 78,
+        "name": "CFOP: 5102; CSOSN: 102"
+      },
+      "url": "http://localhost:4000/api/v1/products/165",
+      "inventories": []
     }
   ]
 
@@ -115,8 +139,16 @@ Exemplo::
     "barcode": "1234567890",
     "external_id": null,
     "weight": null,
+    "vendible_balance": -6.0,
     "additional_barcodes": [],
-    "url": "http://localhost:4000/api/v1/products/163"
+    "ncm_code": "21069090",
+    "cest_code": "1234567",
+    "tax_operation": {
+      "id": 78,
+      "name": "CFOP: 5102; CSOSN: 102"
+    },
+    "url": "http://localhost:4000/api/v1/products/163",
+    "inventories": []
   }
 
 Erros
@@ -147,6 +179,9 @@ Request::
       "barcode": "1234567891",
       "external_id": "123qwe",
       "weight": 123,
+      "ncm_code": "21069090",
+      "cest_code": "1234567",
+      "tax_operation_id": 78,
       "additional_barcodes_attributes": [
         { "value": "10191817" },
         { "value": "16151413" }
@@ -186,6 +221,10 @@ Opcionais
 
     * *packing_id*: Id do packing associado ao insumo. É necessário que o packing tenha "default"(Unidade) como unidade de medida, caso contrário ele é ignorado.
 
+  * *ncm_code*: código ncm do produto.
+  * *cest_code*: código cest do produto.
+  * *tax_operation_id*: id da operação fiscal.
+
 Retorno
 
 Retorno
@@ -211,6 +250,12 @@ Exemplo::
     "barcode": "1234567891",
     "external_id": "123qwe",
     "weight": 123,
+    "ncm_code": "21069090",
+    "cest_code": "1234567",
+    "tax_operation": {
+      "id": 78,
+      "name": "CFOP: 5102; CSOSN: 102"
+    },
     "additional_barcodes": [
       { "id": 123, "value": "10191817" },
       { "id": 321, "value": "16151413" }
@@ -324,6 +369,12 @@ Exemplo::
     "barcode": "1234567891",
     "external_id": null,
     "weight": null,
+    "ncm_code": "21069090",
+    "cest_code": "1234567",
+    "tax_operation": {
+      "id": 78,
+      "name": "CFOP: 5102; CSOSN: 102"
+    },
     "additional_barcodes": [
       { "id": 123, "value": "10191817" },
       { "id": 321, "value": "16151413" }
