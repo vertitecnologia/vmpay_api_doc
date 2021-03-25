@@ -262,7 +262,8 @@ Request::
           "par_level": 20,
           "alert_level": 4,
           "desired_price": 2.5,
-          "logical_locator": 1
+          "logical_locator": 1,
+          "status": "active"
         },
         {
           "type": "Coil",
@@ -272,7 +273,8 @@ Request::
           "par_level": 20,
           "alert_level": 4,
           "desired_price": 2.5,
-          "logical_locator": 2
+          "logical_locator": 2,
+          "status": "active"
         },
         {
           "type": "Canister",
@@ -331,6 +333,7 @@ Obrigatórios
       * *alert_level*: o nível de alerta da canaleta.
       * *desired_price*: o preço unitário desejado.
       * *logical_locator*: trata-se do identificador lógico da canaleta. Deve-se gerar um inteiro único dentro de todos os items do planograma.
+      * *status*: o estado do item no planograma. Caso não seja informado, o padrão *active* será usado
 
     * Combos:
 
@@ -339,6 +342,7 @@ Obrigatórios
       * *good_id*: id do produto. Nesse caso deve ser composto e com o *type* *Combo*. `Good <https://en.wikipedia.org/wiki/Good_%28economics%29>`_ neste caso se traduz como `bem <https://pt.wikipedia.org/wiki/Bem_%28economia%29>`_.
       * *desired_price*: o preço unitário desejado.
       * *logical_locator*: trata-se do identificador lógico do combo. Deve-se gerar um inteiro único dentro de todos os items do planograma.
+      * *status*: o estado do item no planograma. Caso não seja informado, o padrão *active* será usado
       * *children*: as canaletas e suas quantidades que compõe o combo. É um objeto cujas chaves são identificadores lógicos (campo *logical_locator*) das canaletas e os valores as quantidades. No exemplo acima, o combo é composto de 2 produtos da canaleta cujo *name* é "1,2" - ou seja, canaletas 1 e 2 agrupadas - e 1 produto da canaleta cujo *name* é "3,4".
 
     * Canisters:
@@ -349,6 +353,7 @@ Obrigatórios
       * *par_level*: o nível de par do canister. Deve ser preenchido na mesma unidade do insumo (g, ml ou un).
       * *alert_level*: o nível de alerta do canister. Deve ser preenchido na mesma unidade do insumo (g, ml ou un).
       * *logical_locator*: trata-se do identificador lógico do canister. Deve-se gerar um inteiro único dentro de todos os items do planograma.
+      * *status*: o estado do item no planograma. Caso não seja informado, o padrão *active* será usado
 
     * Seleções:
 
@@ -357,7 +362,16 @@ Obrigatórios
       * *good_id*: id do produto. Nesse caso deve ser composto e com o *type* *Mixture*. `Good <https://en.wikipedia.org/wiki/Good_%28economics%29>`_ neste caso se traduz como `bem <https://pt.wikipedia.org/wiki/Bem_%28economia%29>`_.
       * *desired_price*: o preço unitário desejado.
       * *logical_locator*: trata-se do identificador lógico da seleção. Deve-se gerar um inteiro único dentro de todos os items do planograma.
+      * *status*: o estado do item no planograma. Caso não seja informado, o padrão *active* será usado
       * *children*: os canisters e suas quantidades que compõe a seleção. É um objeto cujas chaves são identificadores lógicos (campo *logical_locator*) dos canisters e os valores as quantidades. No exemplo acima, digamos que o insumo de id 12 seja *Chocolate Solúvel com Leite* e o de id 13, *Copo Plástico 160 ml*. Logo, a seleção é composta de 21 gramas de Chocolate Solúvel com Leite e 1 unidade de Copo Plástico 160 ml.
+
+
+    * Campo Status:
+
+      - *active*: o item está ativo e disponível para uso no vmpay e para venda
+      - *inactive*: o item está inativo e não poderá ser usado no vmpay nem disponibilizado para venda
+      - *suspended* o item está suspenso e não poderá ser usado no vmpay, mas as unidades em campo poderão ser vendidas
+
 
 Opcionais
 ^^^^^^^^^
@@ -661,6 +675,7 @@ Obrigatórios
       * *alert_level*: o nível de alerta da canaleta.
       * *desired_price*: o preço unitário desejado.
       * *logical_locator*: trata-se do identificador lógico da canaleta. Deve-se gerar um inteiro único dentro de todos os items do planograma.
+      * *status*: o estado do item no planograma. Caso não seja informado, o padrão *active* será usado
 
     * Combos:
 
@@ -670,6 +685,7 @@ Obrigatórios
       * *good_id*: id do produto. Nesse caso deve ser composto e com o *type* *Combo*. `Good <https://en.wikipedia.org/wiki/Good_%28economics%29>`_ neste caso se traduz como `bem <https://pt.wikipedia.org/wiki/Bem_%28economia%29>`_.
       * *desired_price*: o preço unitário desejado.
       * *logical_locator*: trata-se do identificador lógico do combo. Deve-se gerar um inteiro único dentro de todos os items do planograma.
+      * *status*: o estado do item no planograma. Caso não seja informado, o padrão *active* será usado
       * *children*: as canaletas e suas quantidades que compõe o combo. É um objeto cujas chaves são identificares lógicos (campo *logical_locator*) das canaletas e os valores as quantidades. No exemplo acima, o combo é composto de 2 produtos da canaleta cujo *name* é "1,2" - ou seja, canaletas 1 e 2 agrupadas - e 1 produto da canaleta 3.
 
     * Canisters:
@@ -681,6 +697,7 @@ Obrigatórios
       * *par_level*: o nível de par do canister. Deve ser preenchido na mesma unidade do insumo (g, ml ou un).
       * *alert_level*: o nível de alerta do canister. Deve ser preenchido na mesma unidade do insumo (g, ml ou un).
       * *logical_locator*: trata-se do identificador lógico do canister. Deve-se gerar um inteiro único dentro de todos os items do planograma.
+      * *status*: o estado do item no planograma. Caso não seja informado, o padrão *active* será usado
 
     * Seleções:
 
@@ -690,7 +707,14 @@ Obrigatórios
       * *good_id*: id do produto. Nesse caso deve ser composto e com o *type* *Mixture*. `Good <https://en.wikipedia.org/wiki/Good_%28economics%29>`_ neste caso se traduz como `bem <https://pt.wikipedia.org/wiki/Bem_%28economia%29>`_.
       * *desired_price*: o preço unitário desejado.
       * *logical_locator*: trata-se do identificador lógico da seleção. Deve-se gerar um inteiro único dentro de todos os items do planograma.
+      * *status*: o estado do item no planograma. Caso não seja informado, o padrão *active* será usado
       * *children*: os canisters e suas quantidades que compõe a seleção. É um objeto cujas chaves são identificares lógicos (campo *logical_locator*) dos canisters e os valores as quantidades. No exemplo acima, digamos que o insumo de id 26 seja *Café em pó* e o de id 27, *Leite em pó*. Logo, a seleção é composta de 20 gramas de Café em pó e 15 gramas de Leite em pó.
+
+    * Campo Status:
+
+      - *active*: o item está ativo e disponível para uso no vmpay e para venda
+      - *inactive*: o item está inativo e não poderá ser usado no vmpay nem disponibilizado para venda
+      - *suspended* o item está suspenso e não poderá ser usado no vmpay, mas as unidades em campo poderão ser vendidas
 
 Opcionais
 ^^^^^^^^^
