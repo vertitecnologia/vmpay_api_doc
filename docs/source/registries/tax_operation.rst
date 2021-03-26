@@ -94,14 +94,15 @@ status      descrição                 response body
 404         máquina não encontrada    { "status": "404", "error": "Not Found" }
 ==========  ========================  =========================================
 
-Criar
-=====
+Criar (caso esteja usando Simples Nacional)
+===========================================
 
 ::
 
   POST /api/v1/tax_operations
 
-Request Simples Nacional::
+Request::
+
 
   {
     "tax_operation": {
@@ -143,7 +144,41 @@ Exemplo::
     "csosn": "102"
   }
 
-Request Normal::
+Erros
+-----
+
+==========  ====================================  ====================================================
+status      descrição                             response body
+==========  ====================================  ====================================================
+400         parâmetros faltando                   { "status": "400", "error": "Bad Request" }
+401         não autorizado                        (vazio)
+422         erro ao criar                         ver exemplo abaixo
+==========  ====================================  ====================================================
+
+422 - erro ao criar
+
+::
+
+  {
+    "name": [
+      "já está em uso"
+    ],
+    "cfop": [
+      "não pode ficar em branco"
+    ],
+    "csosn": [
+      "não pode ficar em branco"
+    ]
+  }
+
+Criar (caso NÃO esteja usando Simples Nacional)
+===============================================
+
+::
+
+  POST /api/v1/tax_operations
+
+Request::
 
   {
     "tax_operation": {
