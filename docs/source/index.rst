@@ -19,19 +19,19 @@ Resources disponíveis
    registries/category
    registries/client
    registries/country
+   registries/scheduled_visit_checkpoints
    registries/manufacturer
    registries/installation
    registries/input
    registries/location
    registries/machine
+   registries/tax_operation
    registries/packing
    registries/product
    registries/compound_product
    registries/fractionable_product
    registries/route
    registries/scheduled_visits
-   registries/scheduled_visit_checkpoints
-   registries/tax_operation
    registries/unit
 
 .. toctree::
