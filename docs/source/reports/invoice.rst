@@ -51,7 +51,14 @@ Este serviço suporta `paginação <../overview.html#paginacao>`_.
 * **customer_email**: o e-mail do consumidor informado na compra. Se passado, a consulta retorna somente notas fiscais geradas com esse e-mail.
 
 * **status**: indica qual o status que deseja consultar, podendo ser um desses valores:
-    * { pending: 0, issuing: 1, issued: 2, failed: 3, error: 4, cannot_issue: 5, issued_in_staging: 6 }
+
+  * *pending*: Nota fiscal pendente de envio.
+  * *issuing*: Nota fiscal sendo enviada.
+  * *issued*: Nota fiscal emitida.
+  * *failed*: Falha na emissão da nota fiscal.
+  * *error*: Erro na emissão da nota fiscal.
+  * *cannot_issue*: Nota fiscal não emitida.
+  * *issued_in_staging*: Nota fiscal emitida em ambiente de homologação.
 
 * **number**: número da nota fiscal. Se passado, a consulta retorna somente a nota fiscal com esse número.
 
