@@ -60,6 +60,7 @@ Exemplo:
       "states": ["hatched"],
       "route_ids": [10, 68, 123],
       "last_communication": "26/09/2018 19:13",
+      "virtual_equipment": false,
       "connection": {
         "kind": "GPRS",
         "label": "wwan0",
@@ -105,7 +106,8 @@ Exemplo:
       "operation_status": "yellow",
       "states": ["audit_failure", "hatched"],
       "route_ids": [10, 13],
-      "last_communication": "15/06/2018 23:18"
+      "last_communication": "15/06/2018 23:18",
+      "virtual_equipment": false
     },
     {
       "id": 138,
@@ -132,7 +134,8 @@ Exemplo:
       "operation_status": "red",
       "states": ["extended_power_loss", "hatched"],
       "route_ids": [23],
-      "last_communication": "12/09/2018 13:13"
+      "last_communication": "12/09/2018 13:13",
+      "virtual_equipment": false
     }
   ]
 
@@ -275,6 +278,7 @@ Segue um exemplo de retorno:
       "route_ids": [10, 13],
       "last_communication": "12/09/2018 13:13",
       "payment_authorizer_ids": [1, 2],
+      "virtual_equipment": false,
       "pending_planogram": null,
       "current_planogram": {
         "id": 189976,
@@ -685,6 +689,7 @@ Exemplo:
     "route_ids": [],
     "last_communication": "12/09/2018 13:13",
     "payment_authorizer_ids": [],
+    "virtual_equipment": false,
     "pending_planogram": null,
     "current_planogram": {
       "id": 2950,
@@ -958,6 +963,8 @@ Somente os parâmetros *equipment_id*, *location_id*, *place*, *cash_mode*, *res
 
 Não é permitido atualizar um planograma ativo, somente cadastrar um outro planograma pendente. Para tanto, ver Planogramas.
 
+Não é permitido atualizar instalações virtuais - isto é, instalações cujo atributo *virtual_equipment* é true - por este serviço. Para tanto, utilizar `Instalações Virtuais <./virtual_installation.html#atualizar>`__.
+
 Retorno
 -------
 
@@ -998,6 +1005,7 @@ Exemplo:
     "route_ids": [23],
     "last_communication": "12/09/2018 13:13",
     "payment_authorizer_ids": [],
+    "virtual_equipment": false,
     "pending_planogram": null,
     "current_planogram": {
       "id": 2960,

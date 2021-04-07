@@ -22,6 +22,7 @@ Resources disponíveis
    registries/scheduled_visit_checkpoints
    registries/manufacturer
    registries/installation
+   registries/virtual_installation
    registries/input
    registries/location
    registries/machine
