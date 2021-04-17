@@ -28,7 +28,8 @@ Exemplo::
       "type": "Combo",
       "category_id": 236,
       "name": "Nescau + Leite",
-      "external_id": "qwe111"
+      "external_id": "qwe111",
+      "cost_price": 1.23
     },
     {
       "id": 3046,
@@ -37,7 +38,8 @@ Exemplo::
       "type": "Mixture",
       "category_id": 471,
       "name": "Capuccino brasileiro",
-      "external_id": "qwe222"
+      "external_id": "qwe222",
+      "cost_price": null
     }
   ]
 
@@ -78,7 +80,8 @@ Exemplo:
     "type": "Mixture",
     "category_id": 471,
     "name": "Capuccino brasileiro",
-    "external_id": "qwe222"
+    "external_id": "qwe222",
+    "cost_price": 1.23
   }
 
 Erros
@@ -104,7 +107,8 @@ Request::
       "type": "Combo",
       "category_id": 12,
       "name": "Coca + Ruffles",
-      "external_id": "qwe123"
+      "external_id": "qwe123",
+      "cost_price": 1.23
     }
   }
 
@@ -128,6 +132,7 @@ Opcionais
 
 * *compound_product*
 
+  * *cost_price*: preço de custo
   * *external_id*: identificador externo do produto composto.
 
 Retorno
@@ -148,7 +153,8 @@ Exemplo::
     "type": "Combo",
     "category_id": 12,
     "name": "Coca + Ruffles",
-    "external_id": "qwe123"
+    "external_id": "qwe123",
+    "cost_price": 1.23
   }
 
 Erros
@@ -222,7 +228,8 @@ Exemplo::
     "type": "Combo",
     "category_id": 12,
     "name": "Novo produto composto",
-    "external_id": null
+    "external_id": null,
+    "cost_price": 1.23
   }
 
 Erros

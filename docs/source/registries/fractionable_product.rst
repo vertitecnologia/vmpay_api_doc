@@ -33,6 +33,7 @@ Exemplo::
       "barcode": "20000001",
       "external_id": null,
       "weight": null,
+      "cost_price": 1.23,
       "additional_barcodes": [],
       "unit": {
         "id": 2,
@@ -54,6 +55,7 @@ Exemplo::
       "barcode": "2000100",
       "external_id": null,
       "weight": null,
+      "cost_price": null,
       "additional_barcodes": [
         { "id": 123, "value": "2000101" },
         { "id": 321, "value": "2000102" }
@@ -78,6 +80,7 @@ Exemplo::
       "barcode": 20000003,
       "external_id": null,
       "weight": null,
+      "cost_price": null,
       "additional_barcodes": [],
       "unit": {
         "id": 2,
@@ -128,6 +131,7 @@ Exemplo::
     "barcode": "20000001",
     "external_id": null,
     "weight": null,
+    "cost_price": 1.23,
     "additional_barcodes": [],
     "unit": {
       "id": 2,
@@ -167,6 +171,7 @@ Request::
       "barcode": "20000005",
       "external_id": "123qwe",
       "weight": 123,
+      "cost_price": 1.23,
       "additional_barcodes_attributes": [
         { "value": "20000006" },
         { "value": "20000007" }
@@ -196,6 +201,7 @@ Opcionais
   * *barcode*: código de barras do produto, a ser utilizado no micro market.
   * *external_id*: identificador externo do produto.
   * *weight*: peso do produto (em gramas)
+  * *cost_price*: preço de custo
   * *additional_barcodes_attributes*: Array com códigos de barras adicionais.
 
     * *value*: o código de barras.
@@ -225,6 +231,7 @@ Exemplo::
     "barcode": "20000005",
     "external_id": "123qwe",
     "weight": 123,
+    "cost_price": 1.23,
     "additional_barcodes": [
       { "id": 123, "value": "20000006" },
       { "id": 321, "value": "20000007" }
@@ -333,6 +340,7 @@ Exemplo::
     "barcode": "20000005",
     "external_id": "123qwe",
     "weight": 123,
+    "cost_price": 1.23,
     "additional_barcodes": [
       { "id": 321, "value": "20000007" }
     ],

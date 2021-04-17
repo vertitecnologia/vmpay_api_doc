@@ -34,6 +34,7 @@ Exemplo::
       "external_id": null,
       "weight": null,
       "vendible_balance": -6.0,
+      "cost_price": 1.23,
       "additional_barcodes": [],
       "ncm_code": "21069090",
       "cest_code": "1234567",
@@ -63,6 +64,7 @@ Exemplo::
       "external_id": null,
       "weight": null,
       "vendible_balance": -6.0,
+      "cost_price": null,
       "additional_barcodes": [
         { "id": 123, "value": "10191817" },
         { "id": 321, "value": "16151413" }
@@ -83,6 +85,7 @@ Exemplo::
       "external_id": null,
       "weight": null,
       "vendible_balance": -6.0,
+      "cost_price": null,
       "additional_barcodes": [],
       "packing": {
         "id":15,
@@ -140,6 +143,7 @@ Exemplo::
     "external_id": null,
     "weight": null,
     "vendible_balance": -6.0,
+    "cost_price": 1.23,
     "additional_barcodes": [],
     "ncm_code": "21069090",
     "cest_code": "1234567",
@@ -182,6 +186,7 @@ Request::
       "ncm_code": "21069090",
       "cest_code": "1234567",
       "tax_operation_id": 78,
+      "cost_price": 1.23,
       "additional_barcodes_attributes": [
         { "value": "10191817" },
         { "value": "16151413" }
@@ -213,6 +218,7 @@ Opcionais
   * *barcode*: código de barras do produto, a ser utilizado no micro market.
   * *external_id*: identificador externo do produto.
   * *weight*: peso do produto (em gramas)
+  * *cost_price*: preço de custo
   * *additional_barcodes_attributes*: Array com códigos de barras adicionais.
 
     * *value*: o código de barras.
@@ -256,6 +262,7 @@ Exemplo::
       "id": 78,
       "name": "CFOP: 5102; CSOSN: 102"
     },
+    "cost_price": 1.23,
     "additional_barcodes": [
       { "id": 123, "value": "10191817" },
       { "id": 321, "value": "16151413" }
@@ -375,6 +382,7 @@ Exemplo::
       "id": 78,
       "name": "CFOP: 5102; CSOSN: 102"
     },
+    "cost_price": 1.23,
     "additional_barcodes": [
       { "id": 123, "value": "10191817" },
       { "id": 321, "value": "16151413" }
