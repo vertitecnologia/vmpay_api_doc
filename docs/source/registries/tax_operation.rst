@@ -108,7 +108,9 @@ Request::
     "tax_operation": {
       "name": "CFOP: 5102; CSOSN: 102",
       "cfop": "5102",
-      "csosn": "102"
+      "csosn": "102",
+      "pis_cst": "01",
+      "cofins_cst": "01"
     }
   }
 
@@ -123,6 +125,14 @@ Obrigatórios
   * *name*: Nome da operação fiscal.
   * *cfop*: Código Fiscal da Operação, CFOP da operação válido para NFe.
   * *csosn*: Código de Situação da Operação do Simples Nacional.
+
+Opcionais
+^^^^^^^^^
+
+* *tax_operation*
+
+  * *pis_cst*: Código da situação tributário do PIS.
+  * *cofins_cst*: Código da situação tributário do COFINS.
 
 Retorno
 -------
