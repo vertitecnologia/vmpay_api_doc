@@ -88,6 +88,7 @@ Retorno
     * Caso a emissão da Nota Fiscal seja via SAT, para acessar a URL deve ser informado o "access_token": http://vmpay.vertitecnologia.com.br/api/v1/invoices/4/sat_data?access_token=837e068fbb4c1e1f
 * **routes**: array com detalhes das rotas da instalação da nota fiscal.
 * **items**: array com os itens da nota fiscal.
+* **payment**: informações sobre a forma de pagamento, se disponível.
 
 Segue um exemplo de retorno de consulta:
 
@@ -136,7 +137,15 @@ Segue um exemplo de retorno de consulta:
             "name": "Budweiserr"
           }
         }
-      ]
+      ],
+      "payment": {
+        "request_number": "1",
+        "eft_provider_id": 2,
+        "eft_authorizer_id": 3,
+        "eft_card_brand_id": 4,
+        "eft_card_type_id": 5,
+        "number_of_payments": 1
+      }
     },
     {
       "id": 3,
