@@ -134,7 +134,8 @@ Segue um exemplo de retorno de consulta:
           "amount": 16.99,
           "good": {
             "id": 5,
-            "name": "Budweiserr"
+            "name": "Budweiserr",
+            "upc_code": "1"
           }
         }
       ],
@@ -186,7 +187,8 @@ Segue um exemplo de retorno de consulta:
           "amount": 6.49,
           "good": {
             "id": 2,
-            "name": "Coca-Cola"
+            "name": "Coca-Cola",
+            "upc_code": "2"
           }
         },
         {
@@ -196,7 +198,8 @@ Segue um exemplo de retorno de consulta:
           "amount": 4.99,
           "good": {
             "id": 12,
-            "name": "Twix"
+            "name": "Twix",
+            "upc_code": "3"
           }
         }
       ]
