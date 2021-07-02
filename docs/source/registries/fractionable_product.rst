@@ -41,6 +41,12 @@ Exemplo::
         "name": "gram",
         "conversion_factor": 1000
       },
+      "ncm_code": "21069090",
+      "cest_code": "1234567",
+      "tax_operation": {
+        "id": 78,
+        "name": "CFOP: 5102; CSOSN: 102"
+      },
       "url": "http://localhost:4000/api/v1/fractionable_products/163"
     },
     {
@@ -87,6 +93,12 @@ Exemplo::
         "fractionable": true,
         "name": "gram",
         "conversion_factor": 1000
+      },
+      "ncm_code": "21069090",
+      "cest_code": "1234567",
+      "tax_operation": {
+        "id": 78,
+        "name": "CFOP: 5102; CSOSN: 102"
       },
       "url": "http://localhost:4000/api/v1/fractionable_products/165"
     }
@@ -139,6 +151,12 @@ Exemplo::
       "name": "gram",
       "conversion_factor": 1000
     },
+    "ncm_code": "21069090",
+    "cest_code": "1234567",
+    "tax_operation": {
+      "id": 78,
+      "name": "CFOP: 5102; CSOSN: 102"
+    },
     "url": "http://localhost:4000/api/v1/fractionable_products/163"
   }
 
@@ -171,6 +189,9 @@ Request::
       "barcode": "20000005",
       "external_id": "123qwe",
       "weight": 123,
+      "ncm_code": "21069090",
+      "cest_code": "1234567",
+      "tax_operation_id": 78,
       "cost_price": 1.23,
       "additional_barcodes_attributes": [
         { "value": "20000006" },
@@ -206,6 +227,10 @@ Opcionais
 
     * *value*: o código de barras.
 
+  * *ncm_code*: código ncm do produto.
+  * *cest_code*: código cest do produto.
+  * *tax_operation_id*: id da operação fiscal.
+
 Retorno
 
 Retorno
@@ -231,6 +256,12 @@ Exemplo::
     "barcode": "20000005",
     "external_id": "123qwe",
     "weight": 123,
+    "ncm_code": "21069090",
+    "cest_code": "1234567",
+    "tax_operation": {
+      "id": 78,
+      "name": "CFOP: 5102; CSOSN: 102"
+    },
     "cost_price": 1.23,
     "additional_barcodes": [
       { "id": 123, "value": "20000006" },
@@ -340,6 +371,12 @@ Exemplo::
     "barcode": "20000005",
     "external_id": "123qwe",
     "weight": 123,
+    "ncm_code": "21069090",
+    "cest_code": "1234567",
+    "tax_operation": {
+      "id": 78,
+      "name": "CFOP: 5102; CSOSN: 102"
+    },
     "cost_price": 1.23,
     "additional_barcodes": [
       { "id": 321, "value": "20000007" }
